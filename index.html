@@ -505,10 +505,13 @@ L-1433 Luxembourg`},{ic:"🚗",l:"Accès",v:"Quartier Hamilius · Transports et 
       "#" + FORM_ID + " .cf-sub{font-family:'Jost',sans-serif;font-size:14px;color:var(--iv2,rgba(242,235,224,.72));line-height:1.7;margin:0 0 28px;max-width:460px}" +
       "#" + FORM_ID + " .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}" +
       "#" + FORM_ID + " .cf-field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}" +
-      "#" + FORM_ID + " .cf-field label{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--iv3,rgba(242,235,224,.55))}" +
-      "#" + FORM_ID + " input,#" + FORM_ID + " select,#" + FORM_ID + " textarea{font-family:'Jost',sans-serif;font-size:15px;color:var(--ivoire,#F2EBE0);background:var(--K,#080808);border:1px solid rgba(242,235,224,.16);border-radius:0;padding:13px 15px;width:100%;box-sizing:border-box;transition:border-color .3s,background .3s;outline:none}" +
+      "#" + FORM_ID + " .cf-field label{font-family:'Jost',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,235,224,.88)}" +
+      "#" + FORM_ID + " input,#" + FORM_ID + " select,#" + FORM_ID + " textarea{font-family:'Jost',sans-serif;font-size:15px;color:var(--ivoire,#F2EBE0);background:#1b1b1b;border:1px solid rgba(242,235,224,.34);border-radius:0;padding:13px 15px;width:100%;box-sizing:border-box;transition:border-color .3s,background .3s;outline:none}" +
+      "#" + FORM_ID + " input::placeholder,#" + FORM_ID + " textarea::placeholder{color:rgba(242,235,224,.4)}" +
       "#" + FORM_ID + " textarea{min-height:130px;resize:vertical}" +
       "#" + FORM_ID + " input:focus,#" + FORM_ID + " select:focus,#" + FORM_ID + " textarea:focus{border-color:var(--or,#C8A96E);background-color:#0c0c0c}" +
+      "#" + FORM_ID + " .cf-field.cf-bad input,#" + FORM_ID + " .cf-field.cf-bad textarea{border-color:var(--rouge2,#A82035);background:rgba(168,32,53,.1)}" +
+      "#" + FORM_ID + " .cf-field.cf-bad label{color:#E8A8B0}" +
       "#" + FORM_ID + " select{appearance:none;-webkit-appearance:none;-moz-appearance:none;cursor:pointer;padding-right:44px;background-image:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2716%27%20height%3D%2716%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27%23C8A96E%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M6%209l6%206%206-6%27%2F%3E%3C%2Fsvg%3E\");background-repeat:no-repeat;background-position:right 15px center}" +
       "#" + FORM_ID + " .cf-btn{font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--K,#080808);background:var(--or,#C8A96E);border:none;padding:17px 38px;cursor:pointer;margin-top:8px;transition:background .3s}" +
       "#" + FORM_ID + " .cf-btn:hover{background:var(--or2,#D9BC8A)}" +
@@ -556,6 +559,10 @@ L-1433 Luxembourg`},{ic:"🚗",l:"Accès",v:"Quartier Hamilius · Transports et 
 
     var form = wrap.querySelector("form");
     form.addEventListener("submit", onSubmit);
+    form.addEventListener("input", function (e) {
+      var fld = e.target.closest && e.target.closest(".cf-field");
+      if (fld) fld.classList.remove("cf-bad");
+    });
     return wrap;
   }
 
@@ -575,9 +582,20 @@ L-1433 Luxembourg`},{ic:"🚗",l:"Accès",v:"Quartier Hamilius · Transports et 
     var message = form.querySelector('[name="message"]').value.trim();
 
     msg.className = "cf-msg";
-    if (!name || !email || !message) {
+    form.querySelectorAll(".cf-field.cf-bad").forEach(function (el) { el.classList.remove("cf-bad"); });
+    var checks = [["name", name], ["email", email], ["message", message]];
+    var firstBad = null;
+    checks.forEach(function (p) {
+      if (!p[1]) {
+        var el = form.querySelector('[name="' + p[0] + '"]');
+        var fld = el && el.closest(".cf-field");
+        if (fld) { fld.classList.add("cf-bad"); if (!firstBad) firstBad = el; }
+      }
+    });
+    if (firstBad) {
       msg.className = "cf-msg err";
       msg.textContent = "Merci de renseigner au moins votre nom, votre email et votre message.";
+      try { firstBad.focus(); } catch (e) {}
       return;
     }
 
@@ -786,7 +804,9 @@ L-1433 Luxembourg`},{ic:"🚗",l:"Accès",v:"Quartier Hamilius · Transports et 
       P + " .wm-f{margin-bottom:20px}" +
       P + " .wm-f>label{display:block;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--ivoire,#F2EBE0);margin-bottom:8px;line-height:1.5}" +
       P + " .wm-f .req{color:var(--or,#C8A96E)}" +
-      P + " .wm-f input[type=text],#ufit-wed-overlay .wm-f input[type=tel],#ufit-wed-overlay .wm-f input[type=email],#ufit-wed-overlay .wm-f input[type=date],#ufit-wed-overlay .wm-f textarea{font-family:'Jost',sans-serif;font-size:15px;color:var(--ivoire,#F2EBE0);background:var(--K,#080808);border:1px solid rgba(242,235,224,.16);padding:12px 14px;width:100%;outline:none;transition:border-color .3s}" +
+      P + " .wm-f input[type=text],#ufit-wed-overlay .wm-f input[type=tel],#ufit-wed-overlay .wm-f input[type=email],#ufit-wed-overlay .wm-f input[type=date],#ufit-wed-overlay .wm-f textarea{font-family:'Jost',sans-serif;font-size:15px;color:var(--ivoire,#F2EBE0);background:#1b1b1b;border:1px solid rgba(242,235,224,.34);padding:12px 14px;width:100%;outline:none;transition:border-color .3s}" +
+      P + " .wm-f.wm-bad input,#ufit-wed-overlay .wm-f.wm-bad textarea{border-color:var(--rouge2,#A82035);background:rgba(168,32,53,.1)}" +
+      P + " .wm-f.wm-bad>label{color:#E8A8B0}" +
       P + " .wm-f textarea{min-height:84px;resize:vertical}" +
       P + " .wm-f input:focus,#ufit-wed-overlay .wm-f textarea:focus{border-color:var(--or,#C8A96E)}" +
       P + " .wm-opt{display:flex;align-items:flex-start;gap:10px;font-family:'Jost',sans-serif;font-size:14px;color:var(--iv2,rgba(242,235,224,.82));padding:7px 0;cursor:pointer}" +
@@ -875,6 +895,10 @@ L-1433 Luxembourg`},{ic:"🚗",l:"Accès",v:"Quartier Hamilius · Transports et 
     ov.querySelector(".wm-x").addEventListener("click", close);
     ov.addEventListener("mousedown", function (e) { if (e.target === ov) close(); });
     ov.querySelector("form").addEventListener("submit", function (e) { submit(e, cfg); });
+    ov.querySelector("form").addEventListener("input", function (e) {
+      var fld = e.target.closest && e.target.closest(".wm-f");
+      if (fld) fld.classList.remove("wm-bad");
+    });
     document.addEventListener("keydown", onKey);
   }
 
@@ -921,10 +945,23 @@ L-1433 Luxembourg`},{ic:"🚗",l:"Accès",v:"Quartier Hamilius · Transports et 
       }
     });
 
-    // required check
-    var missing = cfg.fields.some(function (f) { return f.required && !data[f.name]; });
+    // required check + per-field highlight
+    form.querySelectorAll(".wm-f.wm-bad").forEach(function (el) { el.classList.remove("wm-bad"); });
+    var firstBad = null;
+    cfg.fields.forEach(function (f) {
+      if (f.required && !data[f.name]) {
+        var el = form.querySelector('[name="' + f.name + '"]');
+        var fld = el && el.closest(".wm-f");
+        if (fld) { fld.classList.add("wm-bad"); if (!firstBad) firstBad = el; }
+      }
+    });
     msg.className = "wm-msg";
-    if (missing) { msg.className = "wm-msg err"; msg.textContent = T[lang].reqErr; return; }
+    if (firstBad) {
+      msg.className = "wm-msg err";
+      msg.textContent = T[lang].reqErr;
+      try { firstBad.focus(); } catch (e) {}
+      return;
+    }
 
     // Build a clean, labelled email body (French labels for Meghan)
     var lines = cfg.fields.map(function (f) {
