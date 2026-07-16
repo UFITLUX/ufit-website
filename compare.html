@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>U'Fit — Comparateur de 4 styles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,600&family=Poiret+One&family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rouge:#8B1A2A; --rouge2:#A82035;
+  --or:#C8A96E; --or2:#B08D4C; --orlight:#D9BC8A;
+  --ivoire:#F2EBE0; --sans:'Jost', system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+html,body{max-width:100%; overflow-x:hidden}
+body{margin:0; font-family:var(--sans); font-weight:300; line-height:1.6; -webkit-font-smoothing:antialiased}
+
+/* Barre de repère fixe */
+.helper{position:fixed; top:0; left:0; right:0; z-index:20; background:var(--rouge); color:var(--ivoire);
+  text-align:center; font-size:12px; letter-spacing:.14em; text-transform:uppercase; padding:9px}
+
+.opt{position:relative; min-height:100vh; display:flex; flex-direction:column;
+  justify-content:center; align-items:center; padding:80px 24px; overflow:hidden}
+.optnum{position:absolute; top:44px; left:0; right:0; text-align:center;
+  font-family:var(--sans); font-size:11px; letter-spacing:.28em; text-transform:uppercase}
+.fontchip{display:inline-block; border:1px solid currentColor; opacity:.75; border-radius:40px;
+  padding:4px 14px; font-family:var(--sans); font-size:10.5px; letter-spacing:.14em; margin-top:16px}
+
+/* Éléments communs */
+.eyebrow{font-family:var(--sans); font-weight:500; letter-spacing:.3em; text-transform:uppercase; font-size:11px}
+.lead{font-family:var(--sans); font-size:16px; max-width:480px; margin:22px auto 26px}
+.btn{font-family:var(--sans); font-weight:500; letter-spacing:.04em; font-size:14px;
+  padding:14px 26px; border-radius:2px; text-decoration:none; display:inline-block; border:1px solid transparent}
+.divider{display:flex; align-items:center; justify-content:center; gap:16px; margin:22px 0}
+.divider::before,.divider::after{content:''; height:1px; width:64px; background:currentColor; opacity:.5}
+.fan{margin:0 auto 14px; display:block}
+
+/* ===================== OPTION 1 — CINZEL / IVOIRE ===================== */
+.v1{background:#F4EEE3; color:#1A1A1A; text-align:center}
+.v1 .optnum{color:#8B7a5e}
+.v1 .eyebrow{color:var(--rouge)}
+.v1 h1{font-family:'Cinzel',serif; font-weight:500; font-size:clamp(34px,6.4vw,62px);
+  letter-spacing:.09em; line-height:1.16; margin:6px 0 0; color:#1A1A1A}
+.v1 h1 small{display:block; font-weight:400; font-size:.62em; color:var(--or2); letter-spacing:.14em; margin-top:6px}
+.v1 .divider{color:var(--or2)}
+.v1 .lead{color:#4a423a}
+.v1 .btn{background:var(--rouge); color:var(--ivoire); border-color:var(--rouge2)}
+
+/* ===================== OPTION 2 — PLAYFAIR / NOIR & OR ===================== */
+.v2{background:#0a0908; color:#F2EBE0; text-align:left; align-items:flex-start}
+.v2::before{content:''; position:absolute; inset:0; background:url('/assets/cabaret-groupe.jpg') center/cover; opacity:.15}
+.v2::after{content:''; position:absolute; inset:0; background:linear-gradient(90deg, rgba(10,9,8,.92), rgba(10,9,8,.55))}
+.v2 .inner{position:relative; z-index:2; max-width:1000px; margin:0 auto; width:100%; padding-left:6px}
+.v2 .optnum{color:var(--or)}
+.v2 .eyebrow{color:var(--or)}
+.v2 h1{font-family:'Playfair Display',serif; font-weight:700; font-size:clamp(40px,7vw,84px);
+  line-height:1.02; margin:14px 0 0; color:#F2EBE0}
+.v2 h1 em{font-style:italic; font-weight:500; color:var(--orlight)}
+.v2 .rule{height:1px; width:180px; background:var(--or); margin:22px 0}
+.v2 .lead{margin:0 0 26px; color:rgba(242,235,224,.75)}
+.v2 .btn{background:var(--rouge); color:var(--ivoire); border-color:var(--rouge2)}
+.v2 .fontchip{color:var(--or)}
+
+/* ===================== OPTION 3 — POIRET ONE / IVOIRE DÉCO ===================== */
+.v3{background:#EFE7D7; color:#241a12; text-align:center}
+.v3 .optnum{color:#9a866a}
+.v3 .frame3{border:1px solid var(--or2); padding:48px 40px; position:relative; max-width:640px; background:rgba(255,255,255,.25)}
+.v3 .frame3::before{content:''; position:absolute; inset:6px; border:1px solid rgba(176,141,76,.4)}
+.v3 .eyebrow{color:var(--rouge)}
+.v3 h1{font-family:'Poiret One',sans-serif; font-weight:400; font-size:clamp(32px,6vw,58px);
+  letter-spacing:.04em; line-height:1.14; margin:6px 0 0; color:#241a12}
+.v3 h1 span{color:var(--or2)}
+.v3 .divider{color:var(--or2)}
+.v3 .lead{color:#5a4d3e}
+.v3 .btn{background:var(--rouge); color:var(--ivoire); border-color:var(--rouge2)}
+
+/* ===================== OPTION 4 — BODONI / NOIR MINIMAL ===================== */
+.v4{background:#050505; color:#F2EBE0; text-align:center}
+.v4 .optnum{color:var(--or)}
+.v4 .eyebrow{color:var(--or); letter-spacing:.4em}
+.v4 h1{font-family:'Bodoni Moda',serif; font-weight:500; font-size:clamp(38px,7vw,80px);
+  line-height:1.08; margin:18px 0 0; color:#F2EBE0}
+.v4 h1 em{font-style:italic; color:var(--orlight)}
+.v4 .hair{width:60px; height:1px; background:var(--or); margin:26px auto}
+.v4 .lead{color:rgba(242,235,224,.7)}
+.v4 .btn{background:transparent; color:var(--or); border-color:rgba(200,169,110,.5)}
+.v4 .fontchip{color:var(--or)}
+</style>
+</head>
+<body>
+
+<div class="helper">4 styles — fais défiler & choisis ton numéro</div>
+
+<!-- OPTION 1 -->
+<section class="opt v1">
+  <div class="optnum">Option 1</div>
+  <svg class="fan" width="110" height="52" viewBox="0 0 110 52"><g stroke="#B08D4C" stroke-width="1.2" fill="none"><line x1="55" y1="50" x2="8" y2="26"/><line x1="55" y1="50" x2="24" y2="12"/><line x1="55" y1="50" x2="55" y2="4"/><line x1="55" y1="50" x2="86" y2="12"/><line x1="55" y1="50" x2="102" y2="26"/><path d="M26 38 A38 38 0 0 1 84 38"/></g><circle cx="55" cy="50" r="2.6" fill="#8B1A2A"/></svg>
+  <div class="eyebrow">Studio de danse · Cabaret · Jazz</div>
+  <h1>Danse · Cabaret<small>&amp; Spectacle</small></h1>
+  <div class="divider"><span>✦</span></div>
+  <p class="lead">Cours pour adultes à Luxembourg — Broadway Jazz &amp; Cabaret Moderne. Tous niveaux, tous âges.</p>
+  <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
+  <div class="fontchip">Police : Cinzel</div>
+</section>
+
+<!-- OPTION 2 -->
+<section class="opt v2">
+  <div class="optnum">Option 2</div>
+  <div class="inner">
+    <div class="eyebrow">Studio de danse · Cabaret · Jazz — Luxembourg</div>
+    <h1>Danse, Cabaret<br><em>&amp; Spectacle</em></h1>
+    <div class="rule"></div>
+    <p class="lead">Cours pour adultes — Broadway Jazz &amp; Cabaret Moderne. Tous niveaux, tous âges. Venez essayer.</p>
+    <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
+    <div class="fontchip">Police : Playfair Display</div>
+  </div>
+</section>
+
+<!-- OPTION 3 -->
+<section class="opt v3">
+  <div class="optnum">Option 3</div>
+  <div class="frame3">
+    <div class="eyebrow">Studio de danse · Cabaret · Jazz</div>
+    <h1>Danse, Cabaret <span>&amp;</span> Spectacle</h1>
+    <div class="divider"><span>✦ — ✦</span></div>
+    <p class="lead">Cours pour adultes à Luxembourg. Broadway Jazz &amp; Cabaret Moderne, tous niveaux.</p>
+    <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
+    <div class="fontchip">Police : Poiret One</div>
+  </div>
+</section>
+
+<!-- OPTION 4 -->
+<section class="opt v4">
+  <div class="optnum">Option 4</div>
+  <div class="eyebrow">Studio · Cabaret · Jazz</div>
+  <h1>Danse, Cabaret <em>&amp; Spectacle</em></h1>
+  <div class="hair"></div>
+  <p class="lead">Cours pour adultes — Broadway Jazz &amp; Cabaret Moderne. Tous niveaux, tous âges.</p>
+  <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
+  <div class="fontchip">Police : Bodoni Moda</div>
+</section>
+
+</body>
+</html>
