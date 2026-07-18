@@ -6,7 +6,7 @@
 <title>U'Fit — 4 époques (1920 › 1950)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Oswald:wght@400;500;600;700&family=Pacifico&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Oswald:wght@400;500;600;700&family=Kaushan+Script&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
 html,body{max-width:100%; overflow-x:hidden}
@@ -15,94 +15,92 @@ body{margin:0; font-family:'Montserrat',system-ui,sans-serif; font-weight:300; l
 .helper{position:fixed; top:0; left:0; right:0; z-index:30; background:#111; color:#F2EBE0;
   text-align:center; font-size:12px; letter-spacing:.14em; text-transform:uppercase; padding:9px; font-weight:500}
 
-.dopt{position:relative; min-height:100vh; display:flex; align-items:center; padding:96px 24px; overflow:hidden}
+.dopt{position:relative; min-height:100vh; display:flex; align-items:center; padding:100px 24px; overflow:hidden}
 .dopt .bg{position:absolute; inset:0; background-size:cover; background-position:center; z-index:1}
 .dopt .ov{position:absolute; inset:0; z-index:2}
-.dopt .inner{position:relative; z-index:3; width:100%; margin:0 auto}
-.era{position:absolute; top:42px; left:0; right:0; text-align:center; z-index:4;
+.dopt .inner{position:relative; z-index:3; width:100%; max-width:1100px; margin:0 auto}
+.col{max-width:560px}
+.era{position:absolute; top:44px; left:0; right:0; text-align:center; z-index:4;
   font-family:'Montserrat'; font-weight:600; font-size:11px; letter-spacing:.32em; text-transform:uppercase}
 .eyebrow{font-family:'Montserrat'; font-weight:600; letter-spacing:.3em; text-transform:uppercase; font-size:11px}
-.lead{font-family:'Montserrat'; font-weight:300; font-size:16px; max-width:470px; margin:20px 0 26px}
+.lead{font-family:'Montserrat'; font-weight:400; font-size:16px; max-width:440px; margin:20px 0 26px;
+  text-shadow:0 1px 10px rgba(0,0,0,.55)}
 .btn{font-family:'Montserrat'; font-weight:600; letter-spacing:.04em; font-size:13px;
   padding:14px 28px; text-decoration:none; display:inline-block; border:1px solid transparent; border-radius:2px}
 .chip{font-family:'Montserrat'; font-weight:500; font-size:10px; letter-spacing:.14em; text-transform:uppercase;
-  display:inline-block; border:1px solid currentColor; border-radius:40px; padding:4px 13px; opacity:.7; margin-top:20px}
+  display:inline-block; border:1px solid currentColor; border-radius:40px; padding:4px 13px; opacity:.75; margin-top:22px}
+h1{margin:0; text-shadow:0 2px 16px rgba(0,0,0,.5)}
 
 /* =================== 1920 · ART DÉCO =================== */
 .e20{background:#0a0908; color:#F2EBE0}
-.e20 .bg{background-image:url('assets/cabaret-groupe.jpg'); opacity:.30; filter:sepia(.3)}
-.e20 .ov{background:radial-gradient(ellipse at center, rgba(10,9,8,.55), rgba(10,9,8,.93))}
-.e20 .inner{max-width:600px; text-align:center; border:1px solid #B08D4C; padding:46px 40px; background:rgba(10,9,8,.35)}
-.e20 .inner::before{content:''; position:absolute; inset:7px; border:1px solid rgba(200,169,110,.4); pointer-events:none}
+.e20 .bg{background-image:url('assets/cabaret-groupe.jpg'); filter:sepia(.22) contrast(1.02)}
+.e20 .ov{background:linear-gradient(90deg, rgba(10,9,8,.92) 0%, rgba(10,9,8,.58) 46%, rgba(10,9,8,.1) 100%)}
+.e20 .frame{position:absolute; inset:18px; border:1px solid rgba(200,169,110,.55); z-index:4; pointer-events:none}
 .e20 .era{color:#C8A96E}
 .e20 .eyebrow{color:#C8A96E}
-.e20 h1{font-family:'Poiret One',sans-serif; font-weight:400; font-size:clamp(34px,5.6vw,58px);
-  letter-spacing:.05em; line-height:1.14; margin:10px 0 0; color:#F2EBE0}
+.e20 .fan{margin:0 0 10px; display:block}
+.e20 h1{font-family:'Poiret One',sans-serif; font-weight:400; font-size:clamp(36px,6vw,64px);
+  letter-spacing:.05em; line-height:1.12; color:#F2EBE0}
 .e20 h1 span{color:#D9BC8A}
-.e20 .fan{margin:0 auto 8px; display:block}
 .e20 .div{color:#C8A96E; letter-spacing:.3em; font-size:16px; margin:16px 0}
-.e20 .lead{color:rgba(242,235,224,.78); margin-left:auto; margin-right:auto}
+.e20 .lead{color:#EFE7D8}
 .e20 .btn{background:#8B1A2A; color:#F2EBE0; border-color:#A82035}
 .e20 .chip{color:#C8A96E}
 
 /* =================== 1930 · HOLLYWOOD =================== */
-.e30{background:#0c0c0d; color:#e9e9ea; text-align:left}
-.e30 .bg{background-image:url('assets/jazz.jpg'); filter:grayscale(1) contrast(1.08) brightness(.9); opacity:.45}
-.e30 .ov{background:linear-gradient(90deg, rgba(8,8,9,.94) 30%, rgba(8,8,9,.35))}
-.e30 .inner{max-width:1060px}
+.e30{background:#0c0c0d; color:#eef0f2}
+.e30 .bg{background-image:url('assets/jazz.jpg'); filter:grayscale(1) contrast(1.08) brightness(.98)}
+.e30 .ov{background:linear-gradient(90deg, rgba(8,8,9,.92) 0%, rgba(8,8,9,.55) 46%, rgba(8,8,9,.12) 100%)}
 .e30 .era{color:#c9ccd1}
 .e30 .eyebrow{color:#c9ccd1}
 .e30 .streamline{margin-top:16px}
-.e30 .streamline b{display:block; height:1px; background:#c9ccd1; opacity:.5; margin-bottom:5px}
+.e30 .streamline b{display:block; height:1px; background:#c9ccd1; opacity:.6; margin-bottom:5px}
 .e30 .streamline b:nth-child(1){width:150px} .e30 .streamline b:nth-child(2){width:110px} .e30 .streamline b:nth-child(3){width:70px}
 .e30 h1{font-family:'Playfair Display',serif; font-weight:700; font-size:clamp(42px,7vw,84px);
-  line-height:1.02; margin:16px 0 0; color:#fff}
+  line-height:1.02; margin-top:16px; color:#fff}
 .e30 h1 em{font-style:italic; font-weight:600; color:#d6d9de}
-.e30 .lead{color:rgba(233,233,234,.72)}
-.e30 .btn{background:transparent; color:#e9e9ea; border-color:rgba(201,204,209,.6)}
+.e30 .lead{color:#dfe1e4}
+.e30 .btn{background:transparent; color:#eef0f2; border-color:rgba(201,204,209,.65)}
 .e30 .chip{color:#c9ccd1}
 
 /* =================== 1940 · SWING =================== */
-.e40{background:#241812; color:#f3e9d8; text-align:center}
-.e40 .bg{background-image:url('assets/hero-spectacle.jpg'); filter:sepia(.62) contrast(1.05); opacity:.5}
-.e40 .ov{background:radial-gradient(ellipse at center, rgba(36,24,18,.5), rgba(36,24,18,.92))}
-.e40 .inner{max-width:640px; text-align:center; margin:0 auto}
-.e40 .era{color:#c9a24a}
-.e40 .ribbon{display:inline-block; background:#a3242f; color:#f3e9d8; font-family:'Montserrat'; font-weight:600;
-  letter-spacing:.2em; text-transform:uppercase; font-size:11px; padding:7px 22px; margin-bottom:6px}
+.e40{background:#241812; color:#f6eddd}
+.e40 .bg{background-image:url('assets/hero-spectacle.jpg'); filter:sepia(.55) contrast(1.05)}
+.e40 .ov{background:linear-gradient(90deg, rgba(36,24,18,.93) 0%, rgba(36,24,18,.55) 46%, rgba(36,24,18,.12) 100%)}
+.e40 .era{color:#d3ab55}
+.e40 .ribbon{display:inline-block; background:#a3242f; color:#f6eddd; font-family:'Montserrat'; font-weight:600;
+  letter-spacing:.2em; text-transform:uppercase; font-size:11px; padding:7px 20px}
 .e40 h1{font-family:'Oswald',sans-serif; font-weight:700; text-transform:uppercase;
-  font-size:clamp(44px,8.5vw,90px); letter-spacing:.01em; line-height:1; margin:14px 0 0; color:#f3e9d8}
-.e40 h1 span{color:#c9a24a; display:block; font-weight:500; font-size:.5em; letter-spacing:.18em}
-.e40 .lead{color:rgba(243,233,216,.8); margin:18px auto 24px}
-.e40 .btn{background:#a3242f; color:#f3e9d8; border-color:#c1303c}
-.e40 .badge{position:absolute; top:88px; right:6%; width:96px; height:96px; border-radius:50%;
-  background:#c9a24a; color:#241812; display:flex; align-items:center; justify-content:center; text-align:center;
+  font-size:clamp(44px,8.5vw,90px); letter-spacing:.01em; line-height:1; margin-top:16px; color:#f6eddd}
+.e40 h1 span{color:#d3ab55; display:block; font-weight:500; font-size:.5em; letter-spacing:.16em}
+.e40 .lead{color:#efe3cf}
+.e40 .btn{background:#a3242f; color:#f6eddd; border-color:#c1303c}
+.e40 .badge{position:absolute; top:96px; right:6%; width:98px; height:98px; border-radius:50%;
+  background:#d3ab55; color:#241812; display:flex; align-items:center; justify-content:center; text-align:center;
   font-family:'Oswald'; font-weight:700; font-size:12px; text-transform:uppercase; line-height:1.1;
-  transform:rotate(-12deg); box-shadow:0 0 0 3px rgba(201,162,74,.35); z-index:4}
-.e40 .chip{color:#c9a24a}
+  transform:rotate(-12deg); box-shadow:0 0 0 3px rgba(211,171,85,.35); z-index:4}
+.e40 .chip{color:#d3ab55}
 
-/* =================== 1950 · ROCK'N'ROLL =================== */
-.e50{background:#0e3d3d; color:#fff7ef; text-align:center}
-.e50 .bg{background-image:url('assets/pinup50.jpg'); opacity:.42}
-.e50 .ov{background:linear-gradient(180deg, rgba(14,61,61,.72), rgba(14,61,61,.9))}
-.e50 .burst{position:absolute; inset:0; z-index:2;
-  background:repeating-conic-gradient(from 0deg at 50% 42%, rgba(255,214,163,.06) 0deg 6deg, transparent 6deg 12deg)}
-.e50 .inner{max-width:660px; text-align:center; margin:0 auto}
-.e50 .era{color:#ffd9a0}
-.e50 .eyebrow{color:#ffb3a7}
-.e50 h1{font-family:'Pacifico',cursive; font-weight:400; font-size:clamp(40px,7.5vw,78px);
-  line-height:1.12; margin:14px 0 0; color:#ffe9c7; text-shadow:0 0 18px rgba(255,107,92,.5)}
-.e50 h1 span{color:#ff6b5c}
-.e50 .lead{color:rgba(255,247,239,.82); margin:16px auto 24px; font-weight:400}
-.e50 .btn{background:#ff6b5c; color:#0e3d3d; border-color:#ff6b5c; font-weight:700}
-.e50 .checker{position:absolute; bottom:0; left:0; right:0; height:26px; z-index:3;
-  background:repeating-linear-gradient(90deg,#fff7ef 0 26px,#0e3d3d 26px 52px)}
-.e50 .chip{color:#ffd9a0}
+/* =================== 1950 · JAZZ CLUB =================== */
+.e50{background:#0f1830; color:#f3ecdd}
+.e50 .bg{background-image:url('assets/pinup50.jpg'); filter:saturate(.72) contrast(1.04) brightness(.92)}
+.e50 .ov{background:linear-gradient(90deg, rgba(15,24,48,.92) 0%, rgba(15,24,48,.62) 46%, rgba(15,24,48,.2) 100%)}
+.e50 .spot{position:absolute; top:-10%; left:8%; width:420px; height:420px; z-index:2; pointer-events:none;
+  background:radial-gradient(circle, rgba(201,162,74,.20), transparent 62%)}
+.e50 .era{color:#c9a24a}
+.e50 .eyebrow{color:#c9a24a}
+.e50 h1{font-family:'Kaushan Script',cursive; font-weight:400; font-size:clamp(42px,7.4vw,78px);
+  line-height:1.16; margin-top:8px; color:#f3ecdd}
+.e50 h1 span{color:#d9b774}
+.e50 .div{width:70px; height:1px; background:#c9a24a; margin:16px 0}
+.e50 .lead{color:#e9e0cf}
+.e50 .btn{background:#c9a24a; color:#0f1830; border-color:#c9a24a; font-weight:700}
+.e50 .chip{color:#c9a24a}
 
 @media(max-width:600px){
-  .dopt{padding:88px 20px}
-  .e20 .inner,.e40 .badge{padding-left:24px;padding-right:24px}
-  .e40 .badge{width:78px;height:78px;font-size:10px;right:4%;top:78px}
+  .dopt{padding:92px 20px}
+  .lead{max-width:100%}
+  .e40 .badge{width:76px;height:76px;font-size:10px;right:4%;top:80px}
 }
 </style>
 </head>
@@ -112,31 +110,31 @@ body{margin:0; font-family:'Montserrat',system-ui,sans-serif; font-weight:300; l
 
 <!-- ============ OPTION 1 · 1920 ============ -->
 <section class="dopt e20">
-  <div class="bg"></div><div class="ov"></div>
+  <div class="bg"></div><div class="ov"></div><div class="frame"></div>
   <div class="era">Option 1 — 1920 · Art Déco</div>
-  <div class="inner">
-    <svg class="fan" width="110" height="50" viewBox="0 0 110 50"><g stroke="#B08D4C" stroke-width="1.2" fill="none"><line x1="55" y1="48" x2="8" y2="24"/><line x1="55" y1="48" x2="24" y2="11"/><line x1="55" y1="48" x2="55" y2="4"/><line x1="55" y1="48" x2="86" y2="11"/><line x1="55" y1="48" x2="102" y2="24"/><path d="M27 36 A38 38 0 0 1 83 36"/></g><circle cx="55" cy="48" r="2.4" fill="#8B1A2A"/></svg>
+  <div class="inner"><div class="col">
+    <svg class="fan" width="108" height="48" viewBox="0 0 108 48"><g stroke="#C8A96E" stroke-width="1.2" fill="none"><line x1="54" y1="46" x2="8" y2="23"/><line x1="54" y1="46" x2="24" y2="11"/><line x1="54" y1="46" x2="54" y2="4"/><line x1="54" y1="46" x2="84" y2="11"/><line x1="54" y1="46" x2="100" y2="23"/><path d="M27 35 A37 37 0 0 1 81 35"/></g><circle cx="54" cy="46" r="2.4" fill="#8B1A2A"/></svg>
     <div class="eyebrow">U'Fit Luxembourg</div>
     <h1>Danse, Cabaret <span>&amp; Spectacle</span></h1>
     <div class="div">✦ — ✦</div>
     <p class="lead">Cours pour adultes — Broadway Jazz &amp; Cabaret Moderne. Tous niveaux, tous âges.</p>
     <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
     <div class="chip">1920 · Poiret One + Montserrat</div>
-  </div>
+  </div></div>
 </section>
 
 <!-- ============ OPTION 2 · 1930 ============ -->
 <section class="dopt e30">
   <div class="bg"></div><div class="ov"></div>
   <div class="era">Option 2 — 1930 · Hollywood Glamour</div>
-  <div class="inner">
+  <div class="inner"><div class="col">
     <div class="eyebrow">U'Fit Luxembourg</div>
     <div class="streamline"><b></b><b></b><b></b></div>
     <h1>Danse, Cabaret<br><em>&amp; Spectacle</em></h1>
     <p class="lead">Cours pour adultes — Broadway Jazz &amp; Cabaret Moderne. Tous niveaux, tous âges.</p>
     <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
     <div class="chip">1930 · Playfair Display + Montserrat</div>
-  </div>
+  </div></div>
 </section>
 
 <!-- ============ OPTION 3 · 1940 ============ -->
@@ -144,27 +142,27 @@ body{margin:0; font-family:'Montserrat',system-ui,sans-serif; font-weight:300; l
   <div class="bg"></div><div class="ov"></div>
   <div class="badge">1er cours<br>offert</div>
   <div class="era">Option 3 — 1940 · Swing</div>
-  <div class="inner">
+  <div class="inner"><div class="col">
     <span class="ribbon">Studio de danse — Luxembourg</span>
     <h1>Danse, Cabaret<span>&amp; Spectacle</span></h1>
     <p class="lead">Cours pour adultes — Broadway Jazz &amp; Cabaret Moderne. Tous niveaux, tous âges.</p>
     <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
     <div class="chip">1940 · Oswald + Montserrat</div>
-  </div>
+  </div></div>
 </section>
 
 <!-- ============ OPTION 4 · 1950 ============ -->
 <section class="dopt e50">
-  <div class="bg"></div><div class="burst"></div><div class="ov"></div>
-  <div class="era">Option 4 — 1950 · Rock'n'roll</div>
-  <div class="inner">
+  <div class="bg"></div><div class="spot"></div><div class="ov"></div>
+  <div class="era">Option 4 — 1950 · Jazz Club</div>
+  <div class="inner"><div class="col">
     <div class="eyebrow">U'Fit Luxembourg</div>
     <h1>Danse, Cabaret <span>&amp; Spectacle</span></h1>
+    <div class="div"></div>
     <p class="lead">Cours pour adultes — Broadway Jazz &amp; Cabaret Moderne. Tous niveaux, tous âges.</p>
     <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
-    <div class="chip">1950 · Pacifico + Montserrat</div>
-  </div>
-  <div class="checker"></div>
+    <div class="chip">1950 · Kaushan Script + Montserrat</div>
+  </div></div>
 </section>
 
 </body>
