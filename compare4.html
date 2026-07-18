@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>U'Fit — Palettes × Centré/Gauche (+ vidéo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{max-width:100%; overflow-x:hidden}
+body{margin:0; font-family:'Montserrat',system-ui,sans-serif; font-weight:300; line-height:1.6; -webkit-font-smoothing:antialiased}
+.helper{position:fixed; top:0; left:0; right:0; z-index:30; background:#111; color:#F2EBE0;
+  text-align:center; font-size:12px; letter-spacing:.14em; text-transform:uppercase; padding:9px; font-weight:500}
+
+.hero{position:relative; min-height:100vh; display:flex; align-items:center; padding:104px 24px; overflow:hidden;
+  background:var(--bg); color:var(--text)}
+.hero .bg{position:absolute; inset:0; z-index:1; background-size:cover; background-position:center;
+  background-image:var(--photo)}
+video.bg{width:100%; height:100%; object-fit:cover}
+.hero .ov{position:absolute; inset:0; z-index:2}
+.hero .inner{position:relative; z-index:3; width:100%; max-width:1100px; margin:0 auto}
+.label{position:absolute; top:46px; left:0; right:0; text-align:center; z-index:4;
+  font-family:'Montserrat'; font-weight:600; font-size:11px; letter-spacing:.26em; text-transform:uppercase; color:var(--accent)}
+
+.eyebrow{font-family:'Montserrat'; font-weight:600; letter-spacing:.3em; text-transform:uppercase; font-size:11px; color:var(--accent)}
+h1{margin:14px 0 0; font-family:'Playfair Display',serif; font-weight:700; line-height:1.05;
+  font-size:clamp(38px,6.4vw,72px); text-shadow:var(--sh)}
+h1 .g{font-style:italic; color:var(--gold)}
+.rule{border:0; height:2px; width:72px; background:var(--rule); margin:18px 0}
+.lead{font-family:'Montserrat'; font-weight:400; font-size:16px; max-width:440px; margin:0 0 26px; text-shadow:var(--sh)}
+.btn{font-family:'Montserrat'; font-weight:600; letter-spacing:.04em; font-size:13px; padding:14px 28px;
+  border-radius:2px; text-decoration:none; display:inline-block; background:var(--btn); color:#fff; border:1px solid var(--btn)}
+.pal{display:flex; gap:9px; margin-top:22px}
+.pal span{width:20px; height:20px; border-radius:50%; box-shadow:0 0 0 1px rgba(140,140,140,.4)}
+.chip{font-family:'Montserrat'; font-weight:500; font-size:10px; letter-spacing:.14em; text-transform:uppercase; opacity:.7; margin-top:14px; color:var(--accent)}
+
+/* Alignements */
+.center .inner{max-width:700px; text-align:center}
+.center .rule{margin-left:auto; margin-right:auto}
+.center .lead{margin-left:auto; margin-right:auto}
+.center .pal{justify-content:center}
+.center .ov{background:radial-gradient(ellipse at center, rgba(var(--veil),.5), rgba(var(--veil),.9))}
+.left .col{max-width:560px; text-align:left}
+.left .ov{background:linear-gradient(90deg, rgba(var(--veil),.93) 0%, rgba(var(--veil),.6) 46%, rgba(var(--veil),.12) 100%)}
+
+/* Palettes */
+.pA{--bg:#0a0908;--text:#F2EBE0;--veil:10,9,8;--accent:#C8A96E;--gold:#D9BC8A;--btn:#8B1A2A;--rule:#C8A96E;--sh:0 2px 16px rgba(0,0,0,.4);--photo:url('assets/hero-spectacle.jpg')}
+.pB{--bg:#F4EEE3;--text:#241a15;--veil:244,238,227;--accent:#8B1A2A;--gold:#9c7b2e;--btn:#8B1A2A;--rule:#9c7b2e;--sh:none;--photo:url('assets/cabaret-groupe.jpg')}
+.pC{--bg:#3a0a12;--text:#F7EFE1;--veil:58,10,18;--accent:#D9BC8A;--gold:#E7C583;--btn:#C1121F;--rule:#D9BC8A;--sh:0 2px 16px rgba(0,0,0,.4);--photo:url('assets/pinup50.jpg')}
+.pD{--bg:#0a0a0a;--text:#F2EBE0;--veil:8,8,8;--accent:#C8A96E;--gold:#D9BC8A;--btn:#C1121F;--rule:#C1121F;--sh:0 2px 16px rgba(0,0,0,.4);--photo:url('assets/jazz.jpg')}
+.pE{--bg:#0a0a0a;--text:#F2EBE0;--veil:8,8,8;--accent:#C8A96E;--gold:#D9BC8A;--btn:#8B1A2A;--rule:#C8A96E;--sh:0 2px 16px rgba(0,0,0,.45)}
+
+@media(max-width:600px){ .hero{padding:96px 20px} .lead{max-width:100%} }
+</style>
+</head>
+<body>
+<div class="helper">Palettes × mise en page — fais défiler & dis le n° + centré ou gauche</div>
+
+<!-- ===== OPTION 1 · NOIR & OR ===== -->
+<section class="hero pA center"><div class="bg"></div><div class="ov"></div>
+  <div class="label">Option 1 · Noir & or — Centré</div>
+  <div class="inner">
+    <div class="eyebrow">U'Fit Luxembourg</div>
+    <h1>Danse, Cabaret <span class="g">&amp; Spectacle</span></h1>
+    <hr class="rule">
+    <p class="lead">Cours pour adultes — Broadway Jazz &amp; Cabaret Moderne. Tous niveaux, tous âges.</p>
+    <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
+    <div class="pal"><span style="background:#0a0908"></span><span style="background:#C8A96E"></span><span style="background:#8B1A2A"></span><span style="background:#F2EBE0"></span></div>
+    <div class="chip">Playfair Display + Montserrat</div>
+  </div>
+</section>
+<section class="hero pA left"><div class="bg"></div><div class="ov"></div>
+  <div class="label">Option 1 · Noir & or — Gauche</div>
+  <div class="inner"><div class="col">
+    <div class="eyebrow">U'Fit Luxembourg</div>
+    <h1>Danse, Cabaret <span class="g">&amp; Spectacle</span></h1>
+    <hr class="rule">
+    <p class="lead">Cours pour adultes — Broadway Jazz &amp; Cabaret Moderne. Tous niveaux, tous âges.</p>
+    <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
+    <div class="pal"><span style="background:#0a0908"></span><span style="background:#C8A96E"></span><span style="background:#8B1A2A"></span><span style="background:#F2EBE0"></span></div>
+    <div class="chip">Playfair Display + Montserrat</div>
+  </div></div>
+</section>
+
+<!-- ===== OPTION 2 · IVOIRE & BORDEAUX ===== -->
+<section class="hero pB center"><div class="bg"></div><div class="ov"></div>
+  <div class="label">Option 2 · Ivoire & bordeaux — Centré</div>
+  <div class="inner">
+    <div class="eyebrow">U'Fit Luxembourg</div>
+    <h1>Danse, Cabaret <span class="g">&amp; Spectacle</span></h1>
+    <hr class="rule">
+    <p class="lead">Cours pour adultes — Broadway Jazz &amp; Cabaret Moderne. Tous niveaux, tous âges.</p>
+    <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
+    <div class="pal"><span style="background:#F4EEE3"></span><span style="background:#8B1A2A"></span><span style="background:#C8A96E"></span><span style="background:#241a15"></span></div>
+    <div class="chip">Playfair Display + Montserrat</div>
+  </div>
+</section>
+<section class="hero pB left"><div class="bg"></div><div class="ov"></div>
+  <div class="label">Option 2 · Ivoire & bordeaux — Gauche</div>
+  <div class="inner"><div class="col">
+    <div class="eyebrow">U'Fit Luxembourg</div>
+    <h1>Danse, Cabaret <span class="g">&amp; Spectacle</span></h1>
+    <hr class="rule">
+    <p class="lead">Cours pour adultes — Broadway Jazz &amp; Cabaret Moderne. Tous niveaux, tous âges.</p>
+    <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
+    <div class="pal"><span style="background:#F4EEE3"></span><span style="background:#8B1A2A"></span><span style="background:#C8A96E"></span><span style="background:#241a15"></span></div>
+    <div class="chip">Playfair Display + Montserrat</div>
+  </div></div>
+</section>
+
+<!-- ===== OPTION 3 · BORDEAUX VELOURS ===== -->
+<section class="hero pC center"><div class="bg"></div><div class="ov"></div>
+  <div class="label">Option 3 · Bordeaux velours — Centré</div>
+  <div class="inner">
+    <div class="eyebrow">U'Fit Luxembourg</div>
+    <h1>Danse, Cabaret <span class="g">&amp; Spectacle</span></h1>
+    <hr class="rule">
+    <p class="lead">Cours pour adultes — Broadway Jazz &amp; Cabaret Moderne. Tous niveaux, tous âges.</p>
+    <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
+    <div class="pal"><span style="background:#3a0a12"></span><span style="background:#C8A96E"></span><span style="background:#F2EBE0"></span><span style="background:#C1121F"></span></div>
+    <div class="chip">Playfair Display + Montserrat</div>
+  </div>
+</section>
+<section class="hero pC left"><div class="bg"></div><div class="ov"></div>
+  <div class="label">Option 3 · Bordeaux velours — Gauche</div>
+  <div class="inner"><div class="col">
+    <div class="eyebrow">U'Fit Luxembourg</div>
+    <h1>Danse, Cabaret <span class="g">&amp; Spectacle</span></h1>
+    <hr class="rule">
+    <p class="lead">Cours pour adultes — Broadway Jazz &amp; Cabaret Moderne. Tous niveaux, tous âges.</p>
+    <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
+    <div class="pal"><span style="background:#3a0a12"></span><span style="background:#C8A96E"></span><span style="background:#F2EBE0"></span><span style="background:#C1121F"></span></div>
+    <div class="chip">Playfair Display + Montserrat</div>
+  </div></div>
+</section>
+
+<!-- ===== OPTION 4 · NOIR & ROUGE VIF ===== -->
+<section class="hero pD center"><div class="bg"></div><div class="ov"></div>
+  <div class="label">Option 4 · Noir & rouge vif — Centré</div>
+  <div class="inner">
+    <div class="eyebrow">U'Fit Luxembourg</div>
+    <h1>Danse, Cabaret <span class="g">&amp; Spectacle</span></h1>
+    <hr class="rule">
+    <p class="lead">Cours pour adultes — Broadway Jazz &amp; Cabaret Moderne. Tous niveaux, tous âges.</p>
+    <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
+    <div class="pal"><span style="background:#0a0a0a"></span><span style="background:#C1121F"></span><span style="background:#F2EBE0"></span><span style="background:#C8A96E"></span></div>
+    <div class="chip">Playfair Display + Montserrat</div>
+  </div>
+</section>
+<section class="hero pD left"><div class="bg"></div><div class="ov"></div>
+  <div class="label">Option 4 · Noir & rouge vif — Gauche</div>
+  <div class="inner"><div class="col">
+    <div class="eyebrow">U'Fit Luxembourg</div>
+    <h1>Danse, Cabaret <span class="g">&amp; Spectacle</span></h1>
+    <hr class="rule">
+    <p class="lead">Cours pour adultes — Broadway Jazz &amp; Cabaret Moderne. Tous niveaux, tous âges.</p>
+    <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
+    <div class="pal"><span style="background:#0a0a0a"></span><span style="background:#C1121F"></span><span style="background:#F2EBE0"></span><span style="background:#C8A96E"></span></div>
+    <div class="chip">Playfair Display + Montserrat</div>
+  </div></div>
+</section>
+
+<!-- ===== OPTION 5 · VIDÉO "ET SI C'ÉTAIT VOUS ?" ===== -->
+<section class="hero pE center"><video class="bg" autoplay muted loop playsinline preload="auto"><source src="assets/et-si-cetait-vous.mp4" type="video/mp4"></video><div class="ov"></div>
+  <div class="label">Option 5 · Vidéo — Centré</div>
+  <div class="inner">
+    <div class="eyebrow">U'Fit Luxembourg</div>
+    <h1>Danse, Cabaret <span class="g">&amp; Spectacle</span></h1>
+    <hr class="rule">
+    <p class="lead">Cours pour adultes — Broadway Jazz &amp; Cabaret Moderne. Tous niveaux, tous âges.</p>
+    <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
+    <div class="chip">Vidéo « Et si c'était vous ? » · Playfair + Montserrat</div>
+  </div>
+</section>
+<section class="hero pE left"><video class="bg" autoplay muted loop playsinline preload="auto"><source src="assets/et-si-cetait-vous.mp4" type="video/mp4"></video><div class="ov"></div>
+  <div class="label">Option 5 · Vidéo — Gauche</div>
+  <div class="inner"><div class="col">
+    <div class="eyebrow">U'Fit Luxembourg</div>
+    <h1>Danse, Cabaret <span class="g">&amp; Spectacle</span></h1>
+    <hr class="rule">
+    <p class="lead">Cours pour adultes — Broadway Jazz &amp; Cabaret Moderne. Tous niveaux, tous âges.</p>
+    <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
+    <div class="chip">Vidéo « Et si c'était vous ? » · Playfair + Montserrat</div>
+  </div></div>
+</section>
+
+</body>
+</html>
