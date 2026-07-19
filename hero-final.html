@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>U'Fit — Hero final (vidéo + logo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rouge:#8B1A2A; --rouge2:#A82035;
+  --or:#C8A96E; --or2:#D9BC8A;
+  --ivoire:#F2EBE0;
+  --display:'Playfair Display',serif; --sans:'Montserrat',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{max-width:100%; overflow-x:hidden}
+body{margin:0; background:#0a0a0a; color:var(--ivoire); font-family:var(--sans); font-weight:300; -webkit-font-smoothing:antialiased}
+
+.topbar{background:var(--rouge); color:var(--ivoire); text-align:center; font-size:11px;
+  letter-spacing:.22em; text-transform:uppercase; padding:8px; position:relative; z-index:5}
+
+.hero{position:relative; min-height:92vh; display:flex; align-items:center; justify-content:center;
+  text-align:center; padding:70px 24px; overflow:hidden}
+.hero video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1}
+.hero .ov{position:absolute; inset:0; z-index:2;
+  background:radial-gradient(ellipse at center, rgba(10,9,8,.5), rgba(10,9,8,.9))}
+.hero .inner{position:relative; z-index:3; max-width:680px}
+
+.logo{width:180px; max-width:56%; margin:0 auto 26px; display:block; filter:drop-shadow(0 2px 12px rgba(0,0,0,.5))}
+h1{margin:0; font-family:var(--display); font-weight:700; line-height:1.06;
+  font-size:clamp(38px,6.4vw,74px); text-shadow:0 2px 16px rgba(0,0,0,.45)}
+h1 .g{display:block; font-style:italic; color:var(--or2)}
+.rule{border:0; height:2px; width:74px; background:var(--or); margin:20px auto}
+.lead{font-size:clamp(15px,2.1vw,17px); color:rgba(242,235,224,.82); max-width:460px; margin:0 auto 26px;
+  text-shadow:0 1px 10px rgba(0,0,0,.4)}
+.btn{font-family:var(--sans); font-weight:600; letter-spacing:.04em; font-size:14px; padding:15px 30px;
+  border-radius:2px; text-decoration:none; display:inline-block; background:var(--rouge); color:var(--ivoire);
+  border:1px solid var(--rouge2); transition:.25s}
+.btn:hover{background:var(--rouge2)}
+.reassure{font-size:12px; color:rgba(242,235,224,.55); letter-spacing:.04em; margin-top:16px}
+</style>
+</head>
+<body>
+<div class="topbar">Premier cours gratuit · Sans engagement · Tous niveaux</div>
+<section class="hero">
+  <video autoplay muted loop playsinline preload="auto"><source src="assets/et-si-cetait-vous.mp4" type="video/mp4"></video>
+  <div class="ov"></div>
+  <div class="inner">
+    <img class="logo" src="assets/logo-ufit-blanc.svg" alt="U'Fit Luxembourg"/>
+    <h1>Danse, Cabaret<span class="g">&amp; Spectacle</span></h1>
+    <hr class="rule">
+    <p class="lead">Cours pour adultes — Broadway Jazz &amp; Cabaret Moderne. Tous niveaux, tous âges. Venez essayer.</p>
+    <a href="#" class="btn">Réserver mon 1er cours gratuit</a>
+    <div class="reassure">Débutant·e bienvenu·e · Aucune expérience requise · Sans engagement</div>
+  </div>
+</section>
+</body>
+</html>
