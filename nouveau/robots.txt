@@ -1,0 +1,37 @@
+# U'Fit Luxembourg — robots.txt
+# À placer À LA RACINE du domaine (https://ufit.lu/robots.txt) au moment de la mise en ligne.
+
+# Moteurs de recherche classiques
+User-agent: *
+Allow: /
+
+# --- Robots IA : autorisés à lire le site ---
+# (pour que U'Fit puisse être cité par ChatGPT, Claude, Perplexity, etc.)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://ufit.lu/sitemap.xml
