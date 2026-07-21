@@ -88,6 +88,10 @@ header{position:sticky; top:0; z-index:50; background:rgba(10,10,10,.86); backdr
 .card h3{font-size:26px; margin:6px 0}
 .card p{font-size:13.5px; color:var(--iv2); margin:0}
 .card.feature{grid-column:span 2; min-height:340px}
+.grid.grid-2{grid-template-columns:repeat(2,1fr)}
+.card .when{font-family:var(--sans); font-weight:700; font-size:14.5px; color:var(--or); margin-top:12px}
+.card .when a{text-decoration:underline; text-underline-offset:3px}
+@media(max-width:640px){ .grid.grid-2{grid-template-columns:1fr} }
 .card.nophoto{background:var(--K3)}
 .card.soon{align-items:center; justify-content:center; text-align:center; background:var(--K2)}
 .card.soon .badge{display:inline-block; border:1px solid var(--or); color:var(--or); font-size:11px; letter-spacing:.2em; text-transform:uppercase; padding:6px 14px; border-radius:40px; margin-bottom:12px}
