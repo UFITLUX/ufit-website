@@ -171,6 +171,10 @@ header{position:sticky; top:0; z-index:50; background:rgba(10,10,10,.86); backdr
 .cform .row{display:flex; gap:14px}
 .cform .row input{flex:1}
 .hp{position:absolute; left:-9999px}
+.flabel{display:block; font-family:var(--sans); font-weight:600; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--or); margin:16px 0 8px}
+.fcheck{display:flex; gap:12px; align-items:flex-start; margin:0 0 12px; font-size:14.5px; color:var(--iv2); cursor:pointer; line-height:1.5}
+.fcheck input{width:auto !important; margin:4px 0 0; flex-shrink:0; accent-color:var(--rouge)}
+.fcheck span strong{color:var(--ivoire)}
 .info-list{list-style:none; padding:0; margin:0}
 .info-list li{margin:0 0 10px; color:var(--iv2)}
 @media(max-width:760px){ .cwrap{grid-template-columns:1fr !important} }

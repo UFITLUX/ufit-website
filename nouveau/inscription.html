@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fiche d'inscription — U'Fit Luxembourg</title>
+<meta name="description" content="Inscrivez-vous en ligne aux cours de danse U'Fit Luxembourg — saison 2026-2027. Cabaret, Broadway Jazz et Baby Dance, le mercredi à Limpertsberg."/>
+<meta name="robots" content="noindex"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topbar">Fiche d'inscription · Saison 2026 - 2027</div>
+<header><div class="wrap nav">
+  <a href="index.html" class="brand">U<span>'</span>Fit</a>
+  <nav class="nav-links" id="menu">
+    <a href="cours-adultes.html">Cours adultes</a><a href="cours-enfants.html">Cours enfants</a><a href="mariage.html">Mariage</a><a href="entreprises.html">Entreprises</a><a href="ecoles.html">Écoles</a><a href="spectacles.html">Spectacles</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a>
+  </nav>
+  <a href="#form" class="btn btn-red" style="padding:10px 20px">S'inscrire</a>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></header>
+
+<section class="phero" style="min-height:38vh">
+  <div class="bg" style="background-image:url('/assets/jazz.jpg')"></div><div class="ov"></div>
+  <div class="inner">
+    <h1>Fiche d'<span class="g">inscription</span></h1>
+    <p class="lead">Saison 2026-2027 · Remplissez le formulaire, on vous confirme votre place par email.</p>
+  </div>
+</section>
+
+<section class="section" id="form">
+  <div class="wrap" style="max-width:760px">
+    <form class="cform" style="max-width:none" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="3a9c4aa3-b5d8-4523-bb8f-21573b93cb70">
+      <input type="hidden" name="subject" value="Nouvelle inscription — saison 2026-2027">
+      <input type="hidden" name="from_name" value="Site U'Fit — fiche d'inscription">
+
+      <h2 class="sec-title" style="font-size:26px;margin-bottom:6px">Renseignements de l'élève</h2>
+      <hr class="rule">
+      <div class="row">
+        <input type="text" name="Nom" placeholder="Nom *" required>
+        <input type="text" name="Prenom" placeholder="Prénom *" required>
+      </div>
+      <label class="flabel">Date de naissance *</label>
+      <input type="date" name="Date de naissance" required>
+      <input type="text" name="Adresse" placeholder="Adresse complète *" required>
+      <div class="row">
+        <input type="email" name="Email" placeholder="Email *" required>
+        <input type="tel" name="Telephone" placeholder="Téléphone *" required>
+      </div>
+      <input type="text" name="Representant legal" placeholder="Représentant légal (si l'élève est mineur)">
+
+      <h2 class="sec-title" style="font-size:26px;margin:38px 0 6px">Cours suivi(s)</h2>
+      <hr class="rule">
+      <p class="reassure" style="margin:0 0 14px">Tous les cours ont lieu le <strong>mercredi</strong>, salle Fit &amp; Fresh — 15 Av. de la Faïencerie, L-1510 Luxembourg (Limpertsberg).</p>
+      <label class="fcheck"><input type="checkbox" name="Cours" value="Baby Dance (3-6 ans) - mercredi 17h30"> <span><strong>Baby Dance</strong> (3-6 ans) — mercredi 17h30-18h15</span></label>
+      <label class="fcheck"><input type="checkbox" name="Cours" value="Cabaret - mercredi 18h30"> <span><strong>Cabaret</strong> — mercredi 18h30-19h30</span></label>
+      <label class="fcheck"><input type="checkbox" name="Cours" value="Broadway Jazz - mercredi 19h30"> <span><strong>Broadway Jazz</strong> — mercredi 19h30-20h30</span></label>
+
+      <label class="flabel" style="margin-top:22px">Formule choisie *</label>
+      <label class="fcheck"><input type="radio" name="Formule" value="1 cours adulte - 230 EUR/trimestre" required> <span>1 cours adulte — <strong>230 €</strong> / trimestre</span></label>
+      <label class="fcheck"><input type="radio" name="Formule" value="2 cours adultes - 300 EUR/trimestre"> <span>2 cours adultes — <strong>300 €</strong> / trimestre</span></label>
+      <label class="fcheck"><input type="radio" name="Formule" value="Baby Dance - inscription a l'annee"> <span>Baby Dance — inscription à l'année <em>(tarif communiqué sur demande)</em></span></label>
+
+      <h2 class="sec-title" style="font-size:26px;margin:38px 0 6px">Autorisations</h2>
+      <hr class="rule">
+      <label class="fcheck"><input type="checkbox" name="Certificat sante" value="OUI - aucune contre-indication" required> <span>Je certifie que mon état de santé et/ou celui de mon enfant ne présente <strong>aucune contre-indication</strong> à la pratique de la danse. *</span></label>
+      <label class="fcheck"><input type="checkbox" name="Droit a l image" value="OUI - autorise"> <span>J'autorise Team U'Fit asbl à reproduire et exploiter mon image, fixée dans le cadre des cours, pour la promotion et la communication de l'association.</span></label>
+
+      <label class="flabel" style="margin-top:22px">Remarques (facultatif)</label>
+      <textarea name="Remarques" rows="3" placeholder="Une question, une précision ?"></textarea>
+
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+      <div class="actions" style="margin-top:8px">
+        <button type="submit" class="btn btn-red">Envoyer mon inscription</button>
+        <a href="https://wa.me/33642873181" target="_blank" rel="noopener" class="btn btn-wa">Une question ? WhatsApp</a>
+      </div>
+      <p class="reassure">* champs obligatoires · Vos données servent uniquement à gérer votre inscription.</p>
+    </form>
+  </div>
+</section>
+
+<!-- PAIEMENT -->
+<section class="section alt">
+  <div class="wrap" style="max-width:760px">
+    <h2 class="sec-title" style="font-size:26px">Paiement &amp; calendrier</h2>
+    <hr class="rule">
+    <p class="sec-lead">Le paiement s'effectue <strong>à chaque début de trimestre par virement bancaire</strong> :</p>
+    <ul class="info-list" style="margin:0 0 20px">
+      <li><strong>Team U'Fit asbl</strong></li>
+      <li>IBAN : <strong>LU26 0019 7555 6216 4000</strong></li>
+      <li>BIC : BCEELULL</li>
+    </ul>
+    <p class="sec-lead">Les cours suivent le <strong>calendrier scolaire luxembourgeois</strong> : pas de cours pendant les vacances scolaires.</p>
+    <p class="reassure">Inscription possible en cours d'année, le forfait est alors proratisé.</p>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div class="foot-grid">
+    <div class="foot-brand"><div class="brand">U<span>'</span>Fit</div><p>Studio de danse, cabaret, Broadway jazz et spectacle au Luxembourg.</p>
+      <div class="foot-social"><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></div>
+    </div>
+    <div><h4>Navigation</h4><a href="cours-adultes.html">Cours adultes</a><br><a href="cours-enfants.html">Cours enfants</a><br><a href="mariage.html">Mariage</a><br><a href="entreprises.html">Entreprises</a><br><a href="ecoles.html">Écoles</a><br><a href="spectacles.html">Spectacles</a><br><a href="a-propos.html">À propos</a></div>
+    <div><h4>Contact</h4><p>Fit &amp; Fresh<br>15 Av. de la Faïencerie<br>L-1510 Luxembourg</p><a href="mailto:ufitlux@gmail.com">ufitlux@gmail.com</a><br><a href="tel:+33642873181">+33 6 42 87 31 81</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 2026 U'Fit Luxembourg · Team U'Fit asbl</span><a href="mentions-legales.html">Mentions légales</a></div>
+</div></footer>
+<script src="app.js" defer></script>
+</body>
+</html>
