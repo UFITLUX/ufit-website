@@ -56,6 +56,7 @@
     </div>
     <div class="reassure">Débutante bienvenue · Aucune expérience requise · Sans engagement</div>
   </div>
+  <button class="sound-toggle" id="soundBtn" aria-label="Activer le son" title="Activer le son">🔇</button>
 </section>
 
 <!-- MANIFESTE -->
@@ -139,7 +140,7 @@
       <div class="tmoi"><div class="tstars">★★★★★</div><p class="q">« Excellence et professionnalisme, avec ce quelque chose en plus : la fantastique énergie positive et contagieuse de Meghan ! »</p><div class="who">Vincent A. · Google</div></div>
       <div class="tmoi"><div class="tstars">★★★★★</div><p class="q">« Meghan est une professeure formidable et passionnée, très motivante et sympathique. Je ne regrette absolument pas d'avoir suivi ses cours, je la recommande sans hésiter. »</p><div class="who">Leïla P. · Google</div></div>
     </div>
-    <a href="https://www.google.com/maps/search/U%27FIT+CLUB+Danse+Luxembourg" target="_blank" rel="noopener" class="btn btn-wa">Voir tous nos avis sur Google</a>
+    <a href="https://g.page/r/CSg9VsqJhTa-EAE" target="_blank" rel="noopener" class="btn btn-wa">Voir tous nos avis sur Google</a>
   </div>
 </section>
 
@@ -206,6 +207,8 @@
 <script>
   var b=document.getElementById('burger'),m=document.getElementById('menu');
   b.addEventListener('click',function(){m.classList.toggle('open')});
+  var sb=document.getElementById('soundBtn'),hv=document.querySelector('.hero video.bg');
+  if(sb&&hv){sb.addEventListener('click',function(){hv.muted=!hv.muted;if(!hv.muted){hv.play();}sb.textContent=hv.muted?'🔇':'🔊';sb.setAttribute('aria-label',hv.muted?'Activer le son':'Couper le son');});}
 </script>
 </body>
 </html>
