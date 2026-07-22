@@ -74,7 +74,7 @@ header{position:sticky; top:0; z-index:50; background:rgba(10,10,10,.86); backdr
 .manifesto strong{color:var(--ivoire)}
 .stats{display:flex; flex-wrap:wrap; gap:44px; margin-top:48px; border-top:1px solid rgba(200,169,110,.2); padding-top:38px}
 .stat b{font-family:var(--display); font-size:44px; font-weight:700; color:var(--or); display:block; line-height:1}
-.stat span{font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--iv3)}
+.stat span{font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:#fff}
 
 /* UNIVERS / cartes */
 .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
@@ -82,11 +82,11 @@ header{position:sticky; top:0; z-index:50; background:rgba(10,10,10,.86); backdr
 .card:hover{transform:translateY(-4px); border-color:rgba(200,169,110,.5)}
 .card .cbg{position:absolute; inset:0; background-size:cover; background-position:center; transition:.5s}
 .card:hover .cbg{transform:scale(1.06)}
-.card::after{content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,9,8,.1) 30%, rgba(10,9,8,.92) 100%)}
+.card::after{content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(8,7,6,.05) 15%, rgba(8,7,6,.55) 55%, rgba(8,7,6,.96) 100%)}
 .card .cbody{position:relative; z-index:2; padding:26px}
 .card .k{font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--or)}
-.card h3{font-size:26px; margin:6px 0}
-.card p{font-size:13.5px; color:var(--iv2); margin:0}
+.card h3{font-size:26px; margin:6px 0; color:#fff; text-shadow:0 1px 10px rgba(0,0,0,.7)}
+.card p{font-size:14px; font-weight:400; color:#fff; margin:0; text-shadow:0 1px 8px rgba(0,0,0,.85)}
 .card.feature{grid-column:span 2; min-height:340px}
 .grid.grid-2{grid-template-columns:repeat(2,1fr)}
 .card .when{font-family:var(--sans); font-weight:700; font-size:14.5px; color:var(--or); margin-top:12px}
