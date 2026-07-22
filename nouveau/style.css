@@ -47,6 +47,7 @@ header{position:sticky; top:0; z-index:50; background:rgba(10,10,10,.86); backdr
 /* HERO accueil (grand) */
 .hero{position:relative; min-height:90vh; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden; padding:70px 24px}
 .hero .bg{position:absolute; inset:0; background-size:cover; background-position:center; z-index:1}
+.hero video.bg{width:100%; height:100%; object-fit:cover}
 .hero .ov{position:absolute; inset:0; z-index:2; background:radial-gradient(ellipse at center, rgba(10,9,8,.55), rgba(10,9,8,.9))}
 .hero .inner{position:relative; z-index:3; max-width:680px}
 .hero h1{font-size:clamp(40px,7vw,80px); text-shadow:0 2px 18px rgba(0,0,0,.5)}
