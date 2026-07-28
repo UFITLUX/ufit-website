@@ -122,6 +122,10 @@ header{position:sticky; top:0; z-index:50; background:rgba(10,10,10,.86); backdr
 /* SPECTACLES */
 .shows-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:center}
 .poster{border-radius:8px; overflow:hidden; border:1px solid rgba(200,169,110,.25)}
+.embed{position:relative; aspect-ratio:16/9; border-radius:8px; overflow:hidden; border:1px solid rgba(200,169,110,.25); background:#000}
+.embed iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+.pastcard .vid{position:relative; aspect-ratio:16/9; background:#000}
+.pastcard .vid iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
 .dates{list-style:none; padding:0; margin:0 0 24px}
 .dates li{font-family:var(--display); font-size:22px; padding:12px 0; border-bottom:1px solid rgba(200,169,110,.2); color:var(--or2)}
 .dates li small{display:block; font-family:var(--sans); font-size:12.5px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--or2)}
