@@ -7,7 +7,7 @@
   --K:#0a0a0a; --K2:#121011; --K3:#1a1618; --wine:#2a0e14;
   --rouge:#8B1A2A; --rouge2:#A82035;
   --or:#C8A96E; --or2:#D9BC8A;
-  --ivoire:#F2EBE0; --iv2:rgba(242,235,224,.74); --iv3:rgba(242,235,224,.42);
+  --ivoire:#F2EBE0; --iv2:rgba(242,235,224,.82); --iv3:rgba(242,235,224,.62);
   --display:'Playfair Display',Georgia,serif; --sans:'Montserrat',system-ui,sans-serif;
   --max:1160px;
 }
@@ -107,6 +107,9 @@ header{position:sticky; top:0; z-index:50; background:rgba(10,10,10,.86); backdr
 .pack .k{font-family:var(--sans); font-weight:600; letter-spacing:.18em; text-transform:uppercase; font-size:12px; color:var(--or)}
 .pack .price{font-family:var(--display); font-weight:700; font-size:46px; color:var(--ivoire); margin:10px 0}
 .pack p{color:var(--iv2); font-size:14px; margin:0 0 20px; min-height:44px}
+.packs.packs-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){ .packs.packs-4{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:520px){ .packs.packs-4{grid-template-columns:1fr} }
 
 /* Blocs "pourquoi" (icônes) */
 .reasons,.values{display:grid; grid-template-columns:repeat(2,1fr); gap:22px; margin-top:8px}
@@ -121,7 +124,7 @@ header{position:sticky; top:0; z-index:50; background:rgba(10,10,10,.86); backdr
 .poster{border-radius:8px; overflow:hidden; border:1px solid rgba(200,169,110,.25)}
 .dates{list-style:none; padding:0; margin:0 0 24px}
 .dates li{font-family:var(--display); font-size:22px; padding:12px 0; border-bottom:1px solid rgba(200,169,110,.2); color:var(--or2)}
-.dates li small{display:block; font-family:var(--sans); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--iv3)}
+.dates li small{display:block; font-family:var(--sans); font-size:12.5px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--or2)}
 
 /* SPECTACLES PASSÉS — grille de cartes */
 .pastgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:8px}
