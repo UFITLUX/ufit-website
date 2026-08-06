@@ -44,7 +44,8 @@
 <section class="section">
   <div class="wrap">
     <h2 class="sec-title">Pourquoi créer une danse ?</h2>
-    <p class="sec-lead" style="margin-bottom:26px;max-width:64ch">Chez U'Fit, chaque danse est <strong>créée de zéro</strong>, autour de votre histoire et de votre musique. Meghan a accompagné des dizaines de couples — des grands débutants aux plus à l'aise — jusqu'au jour J, sans stress. Vous ne copiez pas une chorégraphie toute faite : vous vivez la vôtre.</p>
+    <p class="sec-lead" style="margin-bottom:16px;max-width:64ch">Chez U'Fit, chaque danse est <strong>conçue sur mesure</strong> pour vous : un moment unique à vivre à deux, autour de votre histoire et de votre musique. Meghan vous accompagne en douceur, à votre rythme, du premier pas jusqu'au jour J.</p>
+    <p class="sec-lead" style="font-family:var(--display);font-style:italic;font-size:22px;color:var(--or2);max-width:50ch;margin-bottom:26px">Vivez votre chorégraphie à l'image de votre amour.</p>
     <div class="reasons">
       <div class="reason"><div class="i">💞</div><h3>À deux, sur votre musique</h3><p>Partagez un instant rien qu'à vous, sur la musique qui vous ressemble.</p></div>
       <div class="reason"><div class="i">🎯</div><h3>Une choré sur mesure</h3><p>Créée pour vous et votre niveau — même si vous n'avez jamais dansé.</p></div>
@@ -60,9 +61,9 @@
     <h2 class="sec-title">Votre ouverture de bal.</h2>
     <p class="sec-lead" style="margin:0 auto 34px;max-width:52ch">Vivez un moment unique avec votre conjoint et émerveillez vos invités avec une danse sur mesure.</p>
     <div class="packs">
-      <div class="pack"><div class="k">Pack Bouquet</div><div class="price">399€</div><p>5 séances de coaching pour votre danse de mariage.</p><a href="https://forms.gle/QrGADQixJuzPRAbk7" target="_blank" rel="noopener" class="btn btn-red">Choisir</a></div>
-      <div class="pack" style="border-color:var(--or)"><div class="k">Pack Champagne</div><div class="price">569€</div><p>8 séances de coaching pour votre danse de mariage.</p><a href="https://forms.gle/QrGADQixJuzPRAbk7" target="_blank" rel="noopener" class="btn btn-red">Choisir</a></div>
-      <div class="pack"><div class="k">Pack Honey Moon</div><div class="price">649€</div><p>10 séances de coaching pour votre danse de mariage.</p><a href="https://forms.gle/QrGADQixJuzPRAbk7" target="_blank" rel="noopener" class="btn btn-red">Choisir</a></div>
+      <div class="pack"><div class="k">Pack Bouquet</div><div class="price">449€</div><p>5 séances.</p><a href="https://forms.gle/QrGADQixJuzPRAbk7" target="_blank" rel="noopener" class="btn btn-red">Choisir</a></div>
+      <div class="pack" style="border-color:var(--or)"><div class="k">Pack Champagne</div><div class="price">639€</div><p>8 séances.</p><a href="https://forms.gle/QrGADQixJuzPRAbk7" target="_blank" rel="noopener" class="btn btn-red">Choisir</a></div>
+      <div class="pack"><div class="k">Pack Honey Moon</div><div class="price">699€</div><p>10 séances.</p><a href="https://forms.gle/QrGADQixJuzPRAbk7" target="_blank" rel="noopener" class="btn btn-red">Choisir</a></div>
     </div>
   </div>
 </section>
@@ -103,5 +104,350 @@
   <div class="foot-bottom"><span>© 2026 U'Fit Luxembourg · Team U'Fit asbl</span><a href="mentions-legales.html">Mentions légales</a></div>
 </div></footer>
 <script src="app.js" defer></script>
+<!-- U'Fit wedding forms FR/EN + button hints (Web3Forms) -->
+<script>
+(function () {
+  "use strict";
+  // ── Configuration ───────────────────────────────────────────────
+  var ACCESS_KEY = "3a9c4aa3-b5d8-4523-bb8f-21573b93cb70"; // Web3Forms -> ufitlux@gmail.com
+  var GMAIL = "ufitlux@gmail.com";
+  // Shared option sets (value sent in FR for Meghan; en used for display)
+  var EMOTION = [
+    { v: "Très romantique", en: "Very romantic" },
+    { v: "Romantique et humoristique", en: "Romantic and humorous" },
+    { v: "Raconter un souvenir ou une histoire", en: "Tell a memory or a story" },
+    { v: "Autre", en: "Other" }
+  ];
+  var LIEU = [
+    { v: "À domicile", en: "At home" },
+    { v: "Dans une salle", en: "In a studio" }
+  ];
+  var FORMULES = [
+    { v: "Pack Bouquet — 5 séances — 449€", en: "Bouquet Pack — 5 sessions — €449" },
+    { v: "Pack Champagne — 8 séances — 639€", en: "Champagne Pack — 8 sessions — €639" },
+    { v: "Pack Honey Moon — 10 séances — 699€", en: "Honey Moon Pack — 10 sessions — €699" }
+  ];
+  // Form definitions. Each field: name, type, fr, en, required?, options?
+  var FORMS = {
+    "QrGADQixJuzPRAbk7": {
+      key: "maries",
+      titleFr: "Ouverture de bal", titleEn: "Opening dance",
+      subject: "Mariage — Ouverture de bal (mariés)",
+      introFr: "Répondez à ces quelques questions pour que notre professeur (Meghan ou Laurine) puisse mieux cerner vos attentes. Quel que soit votre niveau, la chorégraphie sera adaptée à vous.",
+      introEn: "Answer these few questions so our teacher (Meghan or Laurine) can understand your expectations. Whatever your level, the choreography will be tailored to you.",
+      fields: [
+        { name: "date_mariage", type: "date", fr: "Date du mariage", en: "Date of the wedding", required: true },
+        { name: "musique", type: "textarea", fr: "Musique(s) choisie(s) (liens YouTube possibles)", en: "Chosen music (YouTube links welcome)" },
+        { name: "style", type: "textarea", fr: "Style(s) de danse souhaité(s) (valse traditionnelle, plus moderne, un mix…)", en: "Dance style(s) you'd like (traditional waltz, modern, a mix…)" },
+        { name: "emotion", type: "radio", fr: "Émotion à faire ressortir", en: "Emotion to convey", options: EMOTION },
+        { name: "histoire", type: "textarea", fr: "Si « souvenir / histoire » : décrivez-le en quelques mots", en: "If “memory / story”: describe it in a few words" },
+        { name: "videos", type: "textarea", fr: "Vidéos repérées qui vous plaisent (liens YouTube)", en: "Videos you liked (YouTube links)" },
+        { name: "bases", type: "text", fr: "Avez-vous des bases de danse ? Lesquelles ?", en: "Any dance background? Which?" },
+        { name: "lieu", type: "radio", fr: "Vous préférez prendre les cours", en: "You'd prefer to take classes", options: LIEU },
+        { name: "dispos", type: "text", fr: "Vos disponibilités en général (jours / horaires)", en: "Your general availability (days / times)" },
+        { name: "formule", type: "checkbox", fr: "Formule qui vous conviendrait le mieux (non définitif)", en: "Package that would suit you best (not final)", options: FORMULES },
+        { name: "noms", type: "text", fr: "Noms des futurs mariés", en: "Names of the future spouses", required: true },
+        { name: "telephone", type: "tel", fr: "Numéro de téléphone", en: "Phone number", required: true },
+        { name: "email", type: "email", fr: "E-mail", en: "E-mail", required: true }
+      ]
+    },
+    "5aPgrw31u9i24aDY8": {
+      key: "temoins",
+      titleFr: "Chorégraphie des témoins", titleEn: "Witnesses' choreography",
+      subject: "Mariage — Chorégraphie des témoins",
+      introFr: "Répondez à ces quelques questions pour que notre professeur cerne vos attentes. La danse des témoins peut être une entrée spéciale ou une chorégraphie pour l'ouverture de bal avec les mariés.",
+      introEn: "Answer these few questions so our teacher can understand your expectations. The witnesses' dance can be a special entrance or a choreography for the opening dance with the couple.",
+      fields: [
+        { name: "date_mariage", type: "date", fr: "Date du mariage", en: "Date of the wedding", required: true },
+        { name: "musique", type: "textarea", fr: "Musique(s) choisie(s) (liens YouTube possibles)", en: "Chosen music (YouTube links welcome)" },
+        { name: "style", type: "textarea", fr: "Style(s) de danse souhaité(s)", en: "Dance style(s) you'd like" },
+        { name: "videos", type: "textarea", fr: "Vidéos repérées qui vous plaisent (liens YouTube)", en: "Videos you liked (YouTube links)" },
+        { name: "emotion", type: "radio", fr: "Émotion à faire ressortir", en: "Emotion to convey", options: EMOTION },
+        { name: "histoire", type: "textarea", fr: "Si « souvenir / histoire » : décrivez-le en quelques mots", en: "If “memory / story”: describe it in a few words" },
+        { name: "bases", type: "text", fr: "Avez-vous des bases de danse ? Lesquelles ?", en: "Any dance background? Which?" },
+        { name: "lieu", type: "radio", fr: "Vous préférez prendre les cours", en: "You'd prefer to take classes", options: LIEU },
+        { name: "nb_temoins", type: "text", fr: "Combien de témoins seriez-vous ?", en: "How many witnesses would you be?" },
+        { name: "contact_nom", type: "text", fr: "Nom de la personne de contact", en: "Contact person's name", required: true },
+        { name: "contact_tel", type: "tel", fr: "Téléphone de la personne de contact", en: "Contact person's phone", required: true },
+        { name: "contact_email", type: "email", fr: "E-mail de la personne de contact", en: "Contact person's e-mail", required: true }
+      ]
+    }
+  };
+  var T = {
+    fr: { send: "Envoyer ma demande", sending: "Envoi en cours…", close: "Fermer",
+      reqErr: "Merci de remplir les champs obligatoires (date, contact, téléphone, e-mail).",
+      ok: "Merci ! Votre demande a bien été envoyée. Nous revenons vers vous très vite.",
+      err: "L'envoi a échoué. Réessayez ou écrivez-nous à ", opt: "optionnel" },
+    en: { send: "Send my request", sending: "Sending…", close: "Close",
+      reqErr: "Please fill in the required fields (date, contact, phone, e-mail).",
+      ok: "Thank you! Your request has been sent. We'll get back to you very soon.",
+      err: "Sending failed. Please retry or e-mail us at ", opt: "optional" }
+  };
+  var lang = (navigator.language || "fr").toLowerCase().indexOf("en") === 0 ? "en" : "fr";
+  // ── Styles ───────────────────────────────────────────────────────
+  function injectStyles() {
+    if (document.getElementById("ufit-wed-style")) return;
+    var P = "#ufit-wed-overlay";
+    var css =
+      P + "{position:fixed;inset:0;z-index:99999;background:rgba(4,4,4,.78);backdrop-filter:blur(3px);display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:24px 14px}" +
+      P + " *{box-sizing:border-box}" +
+      P + " .wm{background:var(--K2,#111);max-width:660px;width:100%;margin:auto;border-top:3px solid var(--or,#C8A96E);box-shadow:0 30px 90px rgba(0,0,0,.6)}" +
+      P + " .wm-hd{position:sticky;top:0;background:var(--K2,#111);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:22px 28px 16px;border-bottom:1px solid rgba(242,235,224,.12);z-index:2}" +
+      P + " .wm-ttl{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--ivoire,#F2EBE0);line-height:1.1;margin:0}" +
+      P + " .wm-ttl span{display:block;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--or,#C8A96E);font-family:'Jost',sans-serif;margin-bottom:5px}" +
+      P + " .wm-tools{display:flex;align-items:center;gap:10px;flex-shrink:0}" +
+      P + " .wm-lang{display:flex;border:1px solid rgba(242,235,224,.25);font-family:'Jost',sans-serif}" +
+      P + " .wm-lang button{background:transparent;color:var(--iv2,rgba(242,235,224,.72));border:none;padding:6px 11px;font-size:11px;font-weight:600;letter-spacing:.08em;cursor:pointer}" +
+      P + " .wm-lang button.on{background:var(--or,#C8A96E);color:var(--K,#080808)}" +
+      P + " .wm-x{background:none;border:none;color:var(--iv2,rgba(242,235,224,.72));font-size:26px;line-height:1;cursor:pointer;padding:0 4px}" +
+      P + " .wm-x:hover{color:var(--ivoire,#F2EBE0)}" +
+      P + " .wm-bd{padding:22px 28px 30px}" +
+      P + " .wm-intro{font-family:'Jost',sans-serif;font-size:13.5px;color:var(--iv2,rgba(242,235,224,.72));line-height:1.7;margin:0 0 24px}" +
+      P + " .wm-f{margin-bottom:20px}" +
+      P + " .wm-f>label{display:block;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--ivoire,#F2EBE0);margin-bottom:8px;line-height:1.5}" +
+      P + " .wm-f .req{color:var(--or,#C8A96E)}" +
+      P + " .wm-f input[type=text],#ufit-wed-overlay .wm-f input[type=tel],#ufit-wed-overlay .wm-f input[type=email],#ufit-wed-overlay .wm-f input[type=date],#ufit-wed-overlay .wm-f textarea{font-family:'Jost',sans-serif;font-size:15px;color:var(--ivoire,#F2EBE0);background:#1b1b1b;border:1px solid rgba(242,235,224,.34);padding:12px 14px;width:100%;outline:none;transition:border-color .3s}" +
+      P + " .wm-f.wm-bad input,#ufit-wed-overlay .wm-f.wm-bad textarea{border-color:var(--rouge2,#A82035);background:rgba(168,32,53,.1)}" +
+      P + " .wm-f.wm-bad>label{color:#E8A8B0}" +
+      P + " .wm-f textarea{min-height:84px;resize:vertical}" +
+      P + " .wm-f input:focus,#ufit-wed-overlay .wm-f textarea:focus{border-color:var(--or,#C8A96E)}" +
+      P + " .wm-opt{display:flex;align-items:flex-start;gap:10px;font-family:'Jost',sans-serif;font-size:14px;color:var(--iv2,rgba(242,235,224,.82));padding:7px 0;cursor:pointer}" +
+      P + " .wm-opt input{margin-top:3px;accent-color:var(--or,#C8A96E);flex-shrink:0}" +
+      P + " .wm-btn{font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--K,#080808);background:var(--or,#C8A96E);border:none;padding:16px 36px;cursor:pointer;transition:background .3s;width:100%}" +
+      P + " .wm-btn:hover{background:var(--or2,#D9BC8A)}" +
+      P + " .wm-btn[disabled]{opacity:.55;cursor:default}" +
+      P + " .wm-msg{font-family:'Jost',sans-serif;font-size:14.5px;line-height:1.7;padding:15px 17px;margin-top:16px;display:none}" +
+      P + " .wm-msg.ok{display:block;color:var(--ivoire,#F2EBE0);background:rgba(200,169,110,.12);border-left:2px solid var(--or,#C8A96E)}" +
+      P + " .wm-msg.err{display:block;color:#F2C9CF;background:rgba(168,32,53,.14);border-left:2px solid var(--rouge2,#A82035)}" +
+      P + " .wm-hp{position:absolute;left:-9999px}" +
+      "#ufit-wed-overlay .en-only{display:none}#ufit-wed-overlay.lang-en .fr-only{display:none}#ufit-wed-overlay.lang-en .en-only{display:inline}" +
+      "@media(max-width:600px){" + P + " .wm-hd{padding:18px 18px 14px}" + P + " .wm-bd{padding:18px 18px 26px}" + P + " .wm-ttl{font-size:22px}}";
+    var s = document.createElement("style");
+    s.id = "ufit-wed-style";
+    s.textContent = css;
+    document.head.appendChild(s);
+  }
+  // ── Helpers to render bilingual text ─────────────────────────────
+  function bil(fr, en) {
+    return '<span class="fr-only">' + esc(fr) + '</span><span class="en-only">' + esc(en) + '</span>';
+  }
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function fieldHtml(f) {
+    var req = f.required ? ' <span class="req">*</span>' : ' <span style="opacity:.5;font-weight:400">(' + T.fr.opt + ' / ' + T.en.opt + ')</span>';
+    var lbl = '<label>' + bil(f.fr, f.en) + req + '</label>';
+    var ctrl = "";
+    if (f.type === "textarea") {
+      ctrl = '<textarea name="' + f.name + '"' + (f.required ? " required" : "") + '></textarea>';
+    } else if (f.type === "radio" || f.type === "checkbox") {
+      ctrl = f.options.map(function (o) {
+        return '<label class="wm-opt"><input type="' + f.type + '" name="' + f.name + '" value="' + esc(o.v) + '">' +
+          "<span>" + bil(o.v, o.en) + "</span></label>";
+      }).join("");
+    } else {
+      ctrl = '<input type="' + f.type + '" name="' + f.name + '"' + (f.required ? " required" : "") + '>';
+    }
+    return '<div class="wm-f">' + lbl + ctrl + "</div>";
+  }
+  // ── Open / close modal ───────────────────────────────────────────
+  var lastFocus = null;
+  function open(formId) {
+    var cfg = FORMS[formId];
+    if (!cfg) return;
+    injectStyles();
+    close(); // ensure single instance
+    lastFocus = document.activeElement;
+    var ov = document.createElement("div");
+    ov.id = "ufit-wed-overlay";
+    ov.className = lang === "en" ? "lang-en" : "";
+    var fieldsHtml = cfg.fields.map(fieldHtml).join("");
+    ov.innerHTML =
+      '<div class="wm" role="dialog" aria-modal="true">' +
+        '<div class="wm-hd">' +
+          '<h2 class="wm-ttl"><span>U\'Fit · Mariage</span>' + bil(cfg.titleFr, cfg.titleEn) + '</h2>' +
+          '<div class="wm-tools">' +
+            '<div class="wm-lang"><button type="button" data-l="fr">FR</button><button type="button" data-l="en">EN</button></div>' +
+            '<button type="button" class="wm-x" aria-label="' + T[lang].close + '">×</button>' +
+          '</div>' +
+        '</div>' +
+        '<div class="wm-bd">' +
+          '<p class="wm-intro">' + bil(cfg.introFr, cfg.introEn) + '</p>' +
+          '<form novalidate>' + fieldsHtml +
+            '<input type="checkbox" name="botcheck" class="wm-hp" tabindex="-1" autocomplete="off">' +
+            '<button type="submit" class="wm-btn">' + bil(T.fr.send, T.en.send) + '</button>' +
+            '<div class="wm-msg" role="status" aria-live="polite"></div>' +
+          '</form>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(ov);
+    document.body.style.overflow = "hidden";
+    setLang(lang, ov);
+    ov.querySelectorAll(".wm-lang button").forEach(function (b) {
+      b.addEventListener("click", function () { setLang(b.getAttribute("data-l"), ov); });
+    });
+    ov.querySelector(".wm-x").addEventListener("click", close);
+    ov.addEventListener("mousedown", function (e) { if (e.target === ov) close(); });
+    ov.querySelector("form").addEventListener("submit", function (e) { submit(e, cfg); });
+    ov.querySelector("form").addEventListener("input", function (e) {
+      var fld = e.target.closest && e.target.closest(".wm-f");
+      if (fld) fld.classList.remove("wm-bad");
+    });
+    document.addEventListener("keydown", onKey);
+  }
+  function setLang(l, ov) {
+    lang = l === "en" ? "en" : "fr";
+    ov.classList.toggle("lang-en", lang === "en");
+    ov.querySelectorAll(".wm-lang button").forEach(function (b) {
+      b.classList.toggle("on", b.getAttribute("data-l") === lang);
+    });
+    var btn = ov.querySelector(".wm-btn");
+    if (btn && !btn.disabled) btn.innerHTML = bil(T.fr.send, T.en.send);
+  }
+  function onKey(e) { if (e.key === "Escape") close(); }
+  function close() {
+    var ov = document.getElementById("ufit-wed-overlay");
+    if (ov) ov.remove();
+    document.body.style.overflow = "";
+    document.removeEventListener("keydown", onKey);
+    if (lastFocus && lastFocus.focus) { try { lastFocus.focus(); } catch (e) {} }
+  }
+  // ── Submit ───────────────────────────────────────────────────────
+  function submit(e, cfg) {
+    e.preventDefault();
+    var form = e.currentTarget;
+    var msg = form.querySelector(".wm-msg");
+    var btn = form.querySelector(".wm-btn");
+    if (form.querySelector('[name="botcheck"]').checked) return;
+    var data = {};
+    cfg.fields.forEach(function (f) {
+      if (f.type === "checkbox") {
+        var vals = [];
+        form.querySelectorAll('[name="' + f.name + '"]:checked').forEach(function (c) { vals.push(c.value); });
+        data[f.name] = vals.join(", ");
+      } else if (f.type === "radio") {
+        var sel = form.querySelector('[name="' + f.name + '"]:checked');
+        data[f.name] = sel ? sel.value : "";
+      } else {
+        var el = form.querySelector('[name="' + f.name + '"]');
+        data[f.name] = el ? el.value.trim() : "";
+      }
+    });
+    // required check + per-field highlight
+    form.querySelectorAll(".wm-f.wm-bad").forEach(function (el) { el.classList.remove("wm-bad"); });
+    var firstBad = null;
+    cfg.fields.forEach(function (f) {
+      if (f.required && !data[f.name]) {
+        var el = form.querySelector('[name="' + f.name + '"]');
+        var fld = el && el.closest(".wm-f");
+        if (fld) { fld.classList.add("wm-bad"); if (!firstBad) firstBad = el; }
+      }
+    });
+    msg.className = "wm-msg";
+    if (firstBad) {
+      msg.className = "wm-msg err";
+      msg.textContent = T[lang].reqErr;
+      try { firstBad.focus(); } catch (e) {}
+      return;
+    }
+    // Build a clean, labelled email body (French labels for Meghan)
+    var lines = cfg.fields.map(function (f) {
+      return f.fr + " : " + (data[f.name] || "—");
+    });
+    var contactEmail = data.email || data.contact_email || "";
+    var payload = {
+      access_key: ACCESS_KEY,
+      subject: cfg.subject,
+      from_name: "Site U'Fit — Mariage",
+      replyto: contactEmail,
+      langue_demande: lang.toUpperCase(),
+      message: "Demande mariage (" + cfg.titleFr + ")\n\n" + lines.join("\n")
+    };
+    btn.disabled = true;
+    var orig = btn.innerHTML;
+    btn.textContent = T[lang].sending;
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload)
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d && d.success) {
+          msg.className = "wm-msg ok";
+          msg.textContent = T[lang].ok;
+          form.reset();
+          setTimeout(close, 3500);
+        } else { throw new Error("fail"); }
+      })
+      .catch(function () {
+        msg.className = "wm-msg err";
+        msg.innerHTML = T[lang].err + '<a href="mailto:' + GMAIL + '" style="color:var(--or,#C8A96E)">' + GMAIL + "</a>.";
+      })
+      .then(function () { btn.disabled = false; btn.innerHTML = orig; });
+  }
+  // ── Intercept the existing Google-Form links ─────────────────────
+  function onClick(e) {
+    var a = e.target.closest && e.target.closest('a[href*="forms.gle/"]');
+    if (!a) return;
+    var href = a.getAttribute("href") || "";
+    var id = null;
+    Object.keys(FORMS).forEach(function (k) { if (href.indexOf(k) > -1) id = k; });
+    if (!id) return;
+    e.preventDefault();
+    e.stopPropagation();
+    open(id);
+  }
+  document.addEventListener("click", onClick, true);
+  // ── Button affordance: arrow + reassurance microcopy ─────────────
+  function injectHintStyles() {
+    if (document.getElementById("ufit-wed-hint-style")) return;
+    var css =
+      'a[href*="forms.gle/"]{position:relative}' +
+      'a[href*="forms.gle/"]::after{content:"\\2192";display:inline-block;margin-left:9px;transition:transform .3s ease}' +
+      'a[href*="forms.gle/"]:hover::after{transform:translateX(5px)}' +
+      ".ufit-formhint{font-family:'Jost',sans-serif;font-size:11.5px;line-height:1.5;letter-spacing:.02em;margin-top:11px;width:100%}" +
+      ".ufit-formhint .fr{color:var(--iv2,rgba(242,235,224,.7))}" +
+      ".ufit-formhint .en{display:block;color:var(--iv3,rgba(242,235,224,.42));font-style:italic;margin-top:2px}";
+    var s = document.createElement("style");
+    s.id = "ufit-wed-hint-style";
+    s.textContent = css;
+    document.head.appendChild(s);
+  }
+  function enhanceButtons() {
+    var links = document.querySelectorAll('a[href*="forms.gle/"]');
+    if (!links.length) return;
+    injectHintStyles();
+    links.forEach(function (a) {
+      var nxt = a.nextElementSibling;
+      if (nxt && nxt.classList && nxt.classList.contains("ufit-formhint")) return; // already there
+      var hint = document.createElement("div");
+      hint.className = "ufit-formhint";
+      hint.innerHTML =
+        '<span class="fr">Quelques questions · 2 minutes · réponse rapide</span>' +
+        '<span class="en">A few questions · 2 minutes · quick reply</span>';
+      if (a.parentNode) a.parentNode.insertBefore(hint, a.nextSibling);
+    });
+  }
+  var hintPending = null;
+  function scheduleEnhance() {
+    if (hintPending) return;
+    hintPending = setTimeout(function () { hintPending = null; enhanceButtons(); }, 150);
+  }
+  function startHints() {
+    enhanceButtons();
+    var root = document.getElementById("root") || document.body;
+    if (window.MutationObserver) {
+      new MutationObserver(scheduleEnhance).observe(root, { childList: true, subtree: true });
+    }
+    window.addEventListener("popstate", scheduleEnhance);
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () { setTimeout(startHints, 400); });
+  } else {
+    setTimeout(startHints, 400);
+  }
+})();
+</script>
 </body>
 </html>
