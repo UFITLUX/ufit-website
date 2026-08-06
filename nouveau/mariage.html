@@ -36,7 +36,6 @@
   <div class="bg" style="background-image:url('/assets/mariage.jpg')"></div><div class="ov"></div>
   <div class="inner">
     <h1>Votre danse,<span class="g"> inoubliable.</span></h1>
-    <p class="lead">Une chorégraphie originale et sur mesure, en couple ou en groupe — ouverture de bal, EVJF, cérémonie. On vous accompagne pas à pas, même si vous n'avez jamais dansé.</p>
   </div>
 </section>
 
@@ -74,9 +73,9 @@
     <h2 class="sec-title">La surprise des témoins.</h2>
     <p class="sec-lead" style="margin:0 auto 34px;max-width:52ch">Offrez une surprise inoubliable aux mariés : une entrée ou une chorégraphie de groupe personnalisée.</p>
     <div class="packs">
-      <div class="pack"><div class="k">Pack Ballons</div><div class="price">199€</div><p>1 séance de 2h : chorégraphie et mise en scène.</p><a href="https://forms.gle/5aPgrw31u9i24aDY8" target="_blank" rel="noopener" class="btn btn-red">Choisir</a></div>
-      <div class="pack"><div class="k">Pack Rubans</div><div class="price">299€</div><p>4h de coaching (2×2h) : chorégraphie et mise en scène.</p><a href="https://forms.gle/5aPgrw31u9i24aDY8" target="_blank" rel="noopener" class="btn btn-red">Choisir</a></div>
-      <div class="pack"><div class="k">Pack Alliances</div><div class="price">399€</div><p>6h de coaching (3×2h ou 2×3h) : chorégraphie et mise en scène.</p><a href="https://forms.gle/5aPgrw31u9i24aDY8" target="_blank" rel="noopener" class="btn btn-red">Choisir</a></div>
+      <div class="pack"><div class="k">Pack Ballons</div><div class="price">199€</div><p>1 séance de 2h.</p><a href="https://forms.gle/5aPgrw31u9i24aDY8" target="_blank" rel="noopener" class="btn btn-red">Choisir</a></div>
+      <div class="pack"><div class="k">Pack Rubans</div><div class="price">299€</div><p>4h de coaching (2×2h).</p><a href="https://forms.gle/5aPgrw31u9i24aDY8" target="_blank" rel="noopener" class="btn btn-red">Choisir</a></div>
+      <div class="pack"><div class="k">Pack Alliances</div><div class="price">399€</div><p>6h de coaching (3×2h ou 2×3h).</p><a href="https://forms.gle/5aPgrw31u9i24aDY8" target="_blank" rel="noopener" class="btn btn-red">Choisir</a></div>
     </div>
   </div>
 </section>
@@ -399,16 +398,13 @@
     open(id);
   }
   document.addEventListener("click", onClick, true);
-  // ── Button affordance: arrow + reassurance microcopy ─────────────
+  // ── Button affordance: arrow (hint text removed per Julien 06/08/2026) ──
   function injectHintStyles() {
     if (document.getElementById("ufit-wed-hint-style")) return;
     var css =
       'a[href*="forms.gle/"]{position:relative}' +
       'a[href*="forms.gle/"]::after{content:"\\2192";display:inline-block;margin-left:9px;transition:transform .3s ease}' +
-      'a[href*="forms.gle/"]:hover::after{transform:translateX(5px)}' +
-      ".ufit-formhint{font-family:'Jost',sans-serif;font-size:11.5px;line-height:1.5;letter-spacing:.02em;margin-top:11px;width:100%}" +
-      ".ufit-formhint .fr{color:var(--iv2,rgba(242,235,224,.7))}" +
-      ".ufit-formhint .en{display:block;color:var(--iv3,rgba(242,235,224,.42));font-style:italic;margin-top:2px}";
+      'a[href*="forms.gle/"]:hover::after{transform:translateX(5px)}';
     var s = document.createElement("style");
     s.id = "ufit-wed-hint-style";
     s.textContent = css;
@@ -418,16 +414,6 @@
     var links = document.querySelectorAll('a[href*="forms.gle/"]');
     if (!links.length) return;
     injectHintStyles();
-    links.forEach(function (a) {
-      var nxt = a.nextElementSibling;
-      if (nxt && nxt.classList && nxt.classList.contains("ufit-formhint")) return; // already there
-      var hint = document.createElement("div");
-      hint.className = "ufit-formhint";
-      hint.innerHTML =
-        '<span class="fr">Quelques questions · 2 minutes · réponse rapide</span>' +
-        '<span class="en">A few questions · 2 minutes · quick reply</span>';
-      if (a.parentNode) a.parentNode.insertBefore(hint, a.nextSibling);
-    });
   }
   var hintPending = null;
   function scheduleEnhance() {
