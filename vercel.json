@@ -1,1 +1,24 @@
-{"rewrites":[{"source":"/(.*)","destination":"/index.html"}]}
+{
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/cours-de-danse-adultes", "destination": "/cours-adultes.html", "permanent": true },
+    { "source": "/contemporain-lyrical", "destination": "/cours-adultes.html", "permanent": true },
+    { "source": "/theatrical-jazz", "destination": "/broadway-jazz.html", "permanent": true },
+    { "source": "/cabaret-moderne", "destination": "/cabaret.html", "permanent": true },
+    { "source": "/cours-de-danse-enfants", "destination": "/cours-enfants.html", "permanent": true },
+    { "source": "/baby-dance", "destination": "/cours-enfants.html", "permanent": true },
+    { "source": "/jazz-kids", "destination": "/cours-enfants.html", "permanent": true },
+    { "source": "/danse-de-mariage-by-ufit", "destination": "/mariage.html", "permanent": true },
+    { "source": "/nos-spectacles", "destination": "/spectacles.html", "permanent": true },
+    { "source": "/notre-equipe", "destination": "/a-propos.html", "permanent": true },
+    { "source": "/danse-avec-meghan", "destination": "/a-propos.html", "permanent": true },
+    { "source": "/bikey-seranilla-danseur", "destination": "/a-propos.html", "permanent": true },
+    { "source": "/nous-contacter", "destination": "/contact.html", "permanent": true },
+    { "source": "/du-sport-dans-mon-entreprise", "destination": "/entreprises.html", "permanent": true },
+    { "source": "/workshops-et-evenements", "destination": "/entreprises.html", "permanent": true },
+    { "source": "/quels-avantages", "destination": "/entreprises.html", "permanent": true },
+    { "source": "/tarifs", "destination": "/cours-adultes.html", "permanent": true },
+    { "source": "/nos-tarifs", "destination": "/cours-adultes.html", "permanent": true },
+    { "source": "/le-planning", "destination": "/cours-adultes.html", "permanent": true }
+  ]
+}
