@@ -22,7 +22,7 @@
       ? "<b>Classes resume Wednesday 16 September</b> — first class free"
       : "<b>Reprise des cours le mercredi 16 septembre</b> — 1<sup>er</sup> cours gratuit") +
     "</span>" +
-    '<span class="go">' + (en ? "Book" : "Je réserve") + "</span>";
+    '<span class="star" aria-hidden="true">✦</span>';
 
   var header = document.querySelector("header");
   if (header && header.parentNode) {

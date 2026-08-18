@@ -236,7 +236,4 @@ footer a:hover{color:var(--or)}
 .ufit-promo .star{color:var(--or);font-size:15px}
 .ufit-promo .txt{color:var(--ivoire);font-size:14.5px;letter-spacing:.02em}
 .ufit-promo .txt b{color:var(--or2);font-weight:600}
-.ufit-promo .go{color:var(--or);font-size:13px;font-weight:600;white-space:nowrap}
-.ufit-promo .go::after{content:"\2192";margin-left:6px;display:inline-block;transition:.2s}
-.ufit-promo:hover .go::after{transform:translateX(4px)}
-@media(max-width:640px){.ufit-promo{flex-direction:column;gap:6px;text-align:center;padding:10px 16px}.ufit-promo .go{display:none}}
+@media(max-width:640px){.ufit-promo{gap:10px;text-align:center;padding:10px 16px}.ufit-promo .txt{font-size:13px}}
