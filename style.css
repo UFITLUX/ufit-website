@@ -227,3 +227,16 @@ footer a:hover{color:var(--or)}
 /* Sélecteur de langue FR/EN */
 .lang-switch{display:inline-flex;align-items:center;margin-right:12px;font-weight:600;font-size:13px;letter-spacing:.03em;color:var(--iv2);border:1px solid rgba(242,235,224,.3);padding:7px 11px;border-radius:7px;transition:.15s;text-decoration:none}
 .lang-switch:hover{border-color:var(--or);color:var(--or)}
+
+/* Bandeau "reprise des cours" (rentrée) — injecté par promo.js, sous le menu */
+.ufit-promo{display:flex;align-items:center;justify-content:center;gap:12px;padding:12px 20px;text-decoration:none;
+  background:linear-gradient(90deg,#0e0e0e,#1a1712 50%,#0e0e0e);
+  border-top:1px solid rgba(200,169,110,.35);border-bottom:1px solid rgba(200,169,110,.35);transition:.2s}
+.ufit-promo:hover{background:linear-gradient(90deg,#141414,#221d15 50%,#141414)}
+.ufit-promo .star{color:var(--or);font-size:15px}
+.ufit-promo .txt{color:var(--ivoire);font-size:14.5px;letter-spacing:.02em}
+.ufit-promo .txt b{color:var(--or2);font-weight:600}
+.ufit-promo .go{color:var(--or);font-size:13px;font-weight:600;white-space:nowrap}
+.ufit-promo .go::after{content:"\2192";margin-left:6px;display:inline-block;transition:.2s}
+.ufit-promo:hover .go::after{transform:translateX(4px)}
+@media(max-width:640px){.ufit-promo{flex-direction:column;gap:6px;text-align:center;padding:10px 16px}.ufit-promo .go{display:none}}
