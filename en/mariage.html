@@ -371,7 +371,7 @@
     btn.disabled = true;
     var orig = btn.innerHTML;
     btn.textContent = T[lang].sending;
-    fetch("https://api.web3forms.com/submit", {
+    fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify(payload)
