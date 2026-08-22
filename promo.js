@@ -8,7 +8,7 @@
   var a = document.createElement("a");
   a.id = "ufit-promo";
   a.className = "ufit-promo";
-  a.href = en ? "https://app.ufit.lu?lang=en" : "https://app.ufit.lu";
+  a.href = en ? "https://app.ufit.lu?lang=en" : "https://app.ufit.lu?lang=fr";
   a.setAttribute(
     "aria-label",
     en
