@@ -34,8 +34,23 @@ module.exports = async (req, res) => {
   const b = req.body && typeof req.body === "object" ? req.body : {};
   const next = (b._next && String(b._next)) || "/merci.html";
 
-  // Anti-spam : champ piège rempli => on fait comme si tout allait bien
+  // Anti-spam 1 : champ piège rempli => on fait comme si tout allait bien
   if (b.botcheck) {
+    respond(req, res, next, true);
+    return;
+  }
+
+  // Anti-spam 2 : contenu suspect (spam russe = cyrillique, ou liens BBCode/HTML).
+  // Les vrais contacts d'un studio à Luxembourg écrivent en FR/EN/DE.
+  const allText = Object.keys(b)
+    .map((k) => (Array.isArray(b[k]) ? b[k].join(" ") : String(b[k] ?? "")))
+    .join(" \n ");
+  const looksLikeSpam =
+    /[Ѐ-ӿ]/.test(allText) || // cyrillique
+    /\[url|\[\/url\]|\bhref\s*=|\bBTC\b|\bcrypto\b/i.test(allText) || // liens/pubs
+    (allText.match(/https?:\/\//gi) || []).length >= 2; // 2+ liens = spam
+  if (looksLikeSpam) {
+    // On répond "ok" pour ne pas signaler au bot qu'il est filtré, mais on n'envoie rien.
     respond(req, res, next, true);
     return;
   }
