@@ -40,6 +40,14 @@
     { "source": "/questionnaire", "destination": "/", "permanent": true },
     { "source": "/personal-training", "destination": "/", "permanent": true },
     { "source": "/personal-training/:path*", "destination": "/", "permanent": true },
-    { "source": "/le-planning/:path*", "destination": "/", "permanent": true }
+    { "source": "/le-planning/:path*", "destination": "/", "permanent": true },
+
+    { "source": "/10-conseils-pour-soulager-son-dos", "destination": "/", "permanent": true },
+    { "source": "/soulager-son-dos-au-travail", "destination": "/", "permanent": true },
+    { "source": "/bonjour-tout-le-monde", "destination": "/", "permanent": true },
+    { "source": "/wp-content/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-admin", "destination": "/", "permanent": true },
+    { "source": "/wp-admin/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-login.php", "destination": "/", "permanent": true }
   ]
 }
