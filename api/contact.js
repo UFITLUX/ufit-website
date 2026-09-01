@@ -40,9 +40,9 @@ module.exports = async (req, res) => {
     return;
   }
 
-  // Anti-spam 2 : contenu suspect (spam russe = cyrillique, liens, pubs casino/crypto).
-  // Les vrais contacts d'un studio à Luxembourg écrivent en FR/EN/DE, sans lien,
-  // et ne mettent jamais le même texte dans Nom et Prenom.
+  // Anti-spam 2 : contenu suspect (spam russe = cyrillique, pubs casino/crypto,
+  // ou plusieurs liens). Un client/partenaire légitime (collab, entreprise) peut
+  // très bien envoyer UN lien vers son site — on ne bloque pas sur ça seul.
   const allText = Object.keys(b)
     .map((k) => (Array.isArray(b[k]) ? b[k].join(" ") : String(b[k] ?? "")))
     .join(" \n ");
@@ -54,9 +54,9 @@ module.exports = async (req, res) => {
     /[Ѐ-ӿ]/.test(allText) || // cyrillique
     /\[url|\[\/url\]|\bhref\s*=|\bBTC\b|\bcrypto\b|\bcasino\b|\bbetting\b|\bgambl(?:e|ing)\b|\bpoker\b|\bslot\s*machine|\bjackpot\b|\bsportsbook\b|\bwager/i.test(
       allText,
-    ) || // pubs casino/crypto
-    /https?:\/\//i.test(allText) || // un seul lien suffit, un vrai message n'en contient jamais
-    (nom && nom === prenom); // Nom = Prenom identiques : signal classique de bot
+    ) || // pubs casino/crypto (peu importe le nombre de liens)
+    (allText.match(/https?:\/\//gi) || []).length >= 2 || // 2+ liens = spam
+    (nom && nom === prenom && /https?:\/\//i.test(allText)); // nom=prenom + lien : signal de bot
   if (looksLikeSpam) {
     // On répond "ok" pour ne pas signaler au bot qu'il est filtré, mais on n'envoie rien.
     respond(req, res, next, true);
