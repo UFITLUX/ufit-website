@@ -379,6 +379,7 @@
       from_name: "Site U'Fit — Mariage",
       replyto: contactEmail,
       langue_demande: lang.toUpperCase(),
+      _t: window.ufitElapsed ? window.ufitElapsed() : "",
       message: "Demande mariage (" + cfg.titleFr + ")\n\n" + lines.join("\n")
     };
     btn.disabled = true;

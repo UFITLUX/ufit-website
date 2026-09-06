@@ -93,6 +93,24 @@ module.exports = async (req, res) => {
     return;
   }
 
+  // Anti-spam 4 : piège temporel. app.js note dans le champ caché « _t » le temps
+  // (en ms) écoulé entre l'ouverture de la page et l'envoi. Personne ne remplit un
+  // de ces formulaires en moins de 5 secondes — ils demandent tous un message tapé.
+  const tRemplissage = Number(b._t);
+  const tConnu =
+    b._t !== undefined && b._t !== "" && Number.isFinite(tRemplissage);
+  const contientLien = /https?:\/\//i.test(allText);
+  if (
+    (tConnu && tRemplissage < 5000) ||
+    // « _t » absent = l'envoi n'est jamais passé par une page du site (bot qui
+    // poste directement sur /api/contact). On ne bloque alors que s'il pousse un
+    // lien : un visiteur sans JavaScript qui pose une simple question passe.
+    (!tConnu && contientLien)
+  ) {
+    respond(req, res, next, true);
+    return;
+  }
+
   const subject = (b.subject || "Nouveau message — site U'Fit").toString();
   const replyTo =
     b.Email || b.email || b.contact_email || b.replyto || b["E-mail"] || "";
@@ -104,6 +122,7 @@ module.exports = async (req, res) => {
     "from_name",
     "_next",
     "_json",
+    "_t",
     "replyto",
   ]);
   const rows = Object.keys(b)
