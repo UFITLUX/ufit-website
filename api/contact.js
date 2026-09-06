@@ -63,6 +63,36 @@ module.exports = async (req, res) => {
     return;
   }
 
+  // Anti-spam 3 : spam de "link building" / SEO (cas Johnsonedife, sept. 2026).
+  // Ces messages n'ont qu'UN seul lien, donc la règle des 2+ liens ne les voit pas.
+  // 1) lien vers un TLD jetable quasi exclusivement utilisé par les spammeurs
+  // 2) vocabulaire d'outils de spam SEO (Xrumer, GSA SER, backlinks...)
+  // 3) Nom contenu dans le Prénom (ou l'inverse) + un lien : bot qui remplit les
+  //    deux champs avec la même chaîne (« Johnsonedife » / « JohnsonedifeYO »).
+  const liensTldRisque =
+    /https?:\/\/[^\s\/"'<>]*\.(?:monster|xyz|top|icu|buzz|sbs|cyou|bond|click|rest|loan|work|quest|cfd|lol|uno)(?:[\/:?#]|\s|$)/i;
+  const spamSeo =
+    /\bxrumer\b|\bgsa\s*ser\b|\bscrapebox\b|\bsenuke\b|\bbacklinks?\b|\blink[-\s]?building\b|\bdo-?follow\b|\bserps?\b|\bdomain\s+authority\b|\bseo\s+(?:links?|servi|expert|agenc|pack)|\bguest\s+post|\bmass\s+(?:posting|mailing)\b/i;
+  // « quasi identiques » = l'un est le préfixe de l'autre à 3 caractères près, sur
+  // une base d'au moins 6 lettres. Ça vise « Johnsonedife »/« JohnsonedifeYO » sans
+  // toucher aux vrais noms composés (Jean / Jean-Pierre, Marie / Marie-Claire).
+  const norm = (s) => s.replace(/[^a-z0-9à-ÿ]/g, "");
+  const nA = norm(nom);
+  const nB = norm(prenom);
+  const court = nA.length <= nB.length ? nA : nB;
+  const long = nA.length <= nB.length ? nB : nA;
+  const nomsQuasiIdentiques =
+    court.length >= 6 && long.startsWith(court) && long.length - court.length <= 3;
+  if (
+    liensTldRisque.test(allText) ||
+    spamSeo.test(allText) ||
+    (nomsQuasiIdentiques && /https?:\/\//i.test(allText))
+  ) {
+    // Idem : on répond "ok" au bot, mais aucun mail n'est envoyé.
+    respond(req, res, next, true);
+    return;
+  }
+
   const subject = (b.subject || "Nouveau message — site U'Fit").toString();
   const replyTo =
     b.Email || b.email || b.contact_email || b.replyto || b["E-mail"] || "";
