@@ -1,10 +1,10 @@
 // Reçoit les soumissions des formulaires du site et envoie l'email via Resend
-// depuis bonjour@ufit.lu (domaine authentifié) vers ufitlux@gmail.com.
+// depuis notifications@ufit.lu (domaine authentifié) vers ufitlux@gmail.com.
 // Remplace Web3Forms (meilleure délivrabilité, plus de spam).
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const TO = "ufitlux@gmail.com";
-const FROM = "U'Fit <bonjour@ufit.lu>";
+const FROM = "U'Fit <notifications@ufit.lu>";
 const REPLY_FALLBACK = "ufitlux@gmail.com";
 
 function esc(s) {
