@@ -60,7 +60,7 @@
 </section>
 
 <!-- QUESTIONNAIRE -->
-<section class="section center">
+<section class="section center" id="questionnaire" style="scroll-margin-top:90px">
   <div class="wrap" style="max-width:720px">
     <div style="border:1px solid var(--or);border-radius:10px;padding:38px 30px;background:rgba(200,169,110,.06)">
       <div class="eyebrow" style="margin-bottom:10px">Première étape</div>
@@ -86,7 +86,7 @@
 </section>
 
 <!-- PACKS TÉMOINS -->
-<section class="section center">
+<section class="section center" id="questionnaire-invites" style="scroll-margin-top:90px">
   <div class="wrap">
     <h2 class="sec-title">La surprise des témoins</h2>
     <p class="sec-lead" style="margin:0 auto 34px;max-width:52ch">Offrez une surprise inoubliable aux mariés : une entrée ou une chorégraphie de groupe personnalisée.</p>
@@ -453,20 +453,6 @@
   } else {
     setTimeout(startHints, 400);
   }
-  // ── Ouverture directe par l'URL (QR code, lien partage) ──────────
-  // #questionnaire          -> questionnaire des mariés (ouverture de bal)
-  // #questionnaire-invites  -> questionnaire des invités (surprise)
-  function openFromUrl() {
-    var h = (location.hash || "").toLowerCase();
-    if (h.indexOf("questionnaire") === -1) return;
-    open(h.indexOf("invit") > -1 ? "5aPgrw31u9i24aDY8" : "QrGADQixJuzPRAbk7");
-  }
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", openFromUrl);
-  } else {
-    openFromUrl();
-  }
-  window.addEventListener("hashchange", openFromUrl);
 })();
 </script>
 <script src="/promo.js" defer></script>
