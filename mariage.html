@@ -453,6 +453,20 @@
   } else {
     setTimeout(startHints, 400);
   }
+  // ── Ouverture directe par l'URL (QR code, lien partage) ──────────
+  // #questionnaire          -> questionnaire des mariés (ouverture de bal)
+  // #questionnaire-invites  -> questionnaire des invités (surprise)
+  function openFromUrl() {
+    var h = (location.hash || "").toLowerCase();
+    if (h.indexOf("questionnaire") === -1) return;
+    open(h.indexOf("invit") > -1 ? "5aPgrw31u9i24aDY8" : "QrGADQixJuzPRAbk7");
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", openFromUrl);
+  } else {
+    openFromUrl();
+  }
+  window.addEventListener("hashchange", openFromUrl);
 })();
 </script>
 <script src="/promo.js" defer></script>
